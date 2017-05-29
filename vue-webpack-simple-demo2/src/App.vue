@@ -13,11 +13,8 @@ export default {
       msg: 'Welcome to Your Vue.js App'
     }
   },
-  method() {
-    change: {
-      // var str = this.msg;
-      // str = str.split('').reverse();
-      // this.msg = str;
+  method: {
+    change: function() {
       console.log(1);
     }
   }
