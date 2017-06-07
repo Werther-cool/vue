@@ -24,6 +24,11 @@
                     'aaa':Home
                 }
             });
+
+            Vue.component('child',{
+              props:['message'],
+              template:'<span>{{message}}</span>'
+            })
         };
     </script>
 </head>
@@ -38,5 +43,9 @@
         <aaa></aaa>
         {{msg}}
     </div>
+    <template id="child" message="hello">
+123
+    </template>
+    <!-- <child message="hello"></child> -->
 </body>
 </html>
