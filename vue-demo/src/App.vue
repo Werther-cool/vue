@@ -1,10 +1,10 @@
 <template>
 <div id="app">
-  <!-- <div id="app">
+  <div id="app">
     <h1>Hello App!</h1>
     <Nav></Nav>
     <router-view></router-view>
-  </div> -->
+  </div>
 </div>
 </template>
 
