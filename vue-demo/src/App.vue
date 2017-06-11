@@ -1,14 +1,14 @@
 <template>
 <div id="app">
-  <div id="app">
-    <h1>Hello App!</h1>
-    <Nav></Nav>
-    <router-view></router-view>
-  </div>
+  <h1>Hello App!</h1>
+  <VMhead></VMhead>
+  <Nav>123</Nav>
+  <router-view></router-view>
 </div>
 </template>
 
 <script>
+import VMhead from './components/VMhead.vue'
 import Nav from './components/nav.vue'
 export default {
   name: 'app',
@@ -18,6 +18,7 @@ export default {
     }
   },
   component: {
+    VMhead,
     Nav
   }
 }
