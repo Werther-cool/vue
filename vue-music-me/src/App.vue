@@ -1,23 +1,50 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view></router-view>
-  </div>
+<div id="app">
+  <audio :src="src" autoplay id="audio" :loop="isLoop"></audio>
+  <router-view></router-view>
+</div>
 </template>
 
 <script>
+import Store from './store';
+
 export default {
-  name: 'app'
+  computed: {
+    src() {
+      if (Store.state.curSong.id) {
+        return "http://ws.stream.qqmusic.qq.com/" + Store.state.curSong.id + ".m4a?fromtag=46";
+      } else {
+        return '';
+      }
+    },
+    isLoop() {
+      if (Store.state.mode == 'one') {
+        return trun;
+      } else {
+        return false;
+      }
+    }
+  },
+  mounted() {
+    //		歌曲播放时
+    audio.addEventListener('timeupdate', function() {
+      var time = parseInt(this.currentTime * 100);
+      var allTime = parseInt(this.duration * 100);
+      if (isNaN(allTime)) {
+        allTime = 0;
+      }
+      Store.commit('updateTime', time);
+      Store.commit('getAllTime', allTime);
+      if (time == allTime && allTime != 0) {
+        Store.dispatch('chooseSong');
+      }
+    }, false);
+    audio.volume = Store.state.curVolume;
+
+  }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
