@@ -68,12 +68,12 @@ apiRouter.route('/:apiName')
     if (err) throw err
     var data = JSON.parse(data)
     if (data[req.params.apiName]) {
-      res.json(data[req.params.apiName])  
+      res.json(data[req.params.apiName])
     }
     else {
       res.send('no such api name')
     }
-    
+
   })
 })
 

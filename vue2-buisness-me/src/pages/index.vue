@@ -16,11 +16,11 @@
       </div>
       <div class="index-left-block lastest-news">
         <h2>最新消息</h2>
-        <!-- <ul>
+        <ul>
           <li v-for="item in newsList">
             <a :href="item.url" class="new-item">{{ item.title }}</a>
           </li>
-        </ul> -->
+        </ul>
       </div>
     </div>
     <div class="index-right">
@@ -42,14 +42,14 @@
 
 <script>
 export default {
-  // created: function() {
-  //   this.$http.get('api/getNewsList')
-  //     .then((res) => {
-  //       this.newsList = res.data
-  //     }, (err) => {
-  //       console.log(err)
-  //     })
-  // },
+  created: function() {
+    this.$http.get('api/getNewsList')
+      .then((res) => {
+        this.newsList = res.data
+      }, (err) => {
+        console.log(err)
+      })
+  },
   data() {
     return {
       invTime: 2000,
