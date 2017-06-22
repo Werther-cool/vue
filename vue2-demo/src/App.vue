@@ -1,7 +1,14 @@
 <template>
 <div id="app">
-  <img src="./assets/logo.png">
-  <router-view></router-view>
+  <keep-alive>
+    <router-view></router-view>
+
+  </keep-alive>
+
+  <!-- <router-view name="viewB"></router-view>
+  <router-view name="viewA"></router-view> -->
+
+
   <router-link :to="{ name: 'apple', params: {} }">to apple</router-link>
   <router-link :to="{ name: 'redapple', params: {} }">to redapple</router-link>
   <router-link :to="{ name: 'greenapple', params: {} }">to greenapple</router-link>

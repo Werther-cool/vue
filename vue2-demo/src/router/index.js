@@ -13,12 +13,11 @@ export default new Router({
   mode:"history",
   routes: [
     {
-      path: '/',
-      name: 'Hello',
-      component: Hello
+      path:'/',
+      redirect:'/apple',
     },
     {
-      path:'/apple/:num',
+      path:'/apple',
       name: 'apple',
       component:Apple,
       children:[
