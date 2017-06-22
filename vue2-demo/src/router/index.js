@@ -5,10 +5,9 @@ import Apple from '@/components/Apple'
 import Banana from '@/components/Banana'
 import RedApple from '@/components/RedApple'
 import GreenApple from '@/components/GreenApple'
-
+import App from '../App'
 
 Vue.use(Router)
-
 export default new Router({
   mode:"history",
   routes: [
@@ -40,3 +39,34 @@ export default new Router({
     },
   ]
 })
+// export default new Router({
+//   mode:"history",
+//   routes: [
+//     {
+//       path:'/',
+//       redirect:'/apple',
+//     },
+//     {
+//       path:'/apple',
+//       name: 'apple',
+//       component:Apple,
+//       children:[
+//         {
+//           path:'/apple/1',
+//           name: 'redapple',
+//           component:RedApple,
+//         },
+//         {
+//           path:'/apple/2',
+//           name: 'greenapple',
+//           component:GreenApple,
+//         }
+//       ]
+//     },
+//     {
+//       path:'/banana',
+//       name: 'banana',
+//       component:Banana
+//     },
+//   ]
+// })

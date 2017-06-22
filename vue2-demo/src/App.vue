@@ -1,24 +1,34 @@
 <template>
 <div id="app">
-  <keep-alive>
+  <!-- <keep-alive>
     <router-view></router-view>
-
-  </keep-alive>
-
-  <!-- <router-view name="viewB"></router-view>
-  <router-view name="viewA"></router-view> -->
-
-
-  <router-link :to="{ name: 'apple', params: {} }">to apple</router-link>
+  </keep-alive> -->
+  <!-- <router-link :to="{ name: 'apple', params: {} }">to apple</router-link>
   <router-link :to="{ name: 'redapple', params: {} }">to redapple</router-link>
   <router-link :to="{ name: 'greenapple', params: {} }">to greenapple</router-link>
-  <router-link :to="{ name: 'banana', params: {} }">to banana</router-link>
+  <router-link :to="{ name: 'banana', params: {} }">to banana</router-link> -->
+
+
+  {{totalPrice}}
+  <Apple></Apple>
+  <Banana></Banana>
 </div>
 </template>
 
 <script>
+import Apple from './components/apple1'
+import Banana from './components/banana1'
+
 export default {
-  name: 'app'
+  components: {
+    Apple,
+    Banana
+  },
+  computed: {
+    totalPrice() {
+      return this.$store.state.totalPrice
+    }
+  }
 }
 </script>
 

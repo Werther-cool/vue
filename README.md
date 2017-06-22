@@ -1,5 +1,3 @@
 # vue-demo
 
-饿了吗项目
-
-mint-ui 
+vue-demo 练习

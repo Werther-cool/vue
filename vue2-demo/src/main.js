@@ -3,13 +3,34 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import Vuex from 'vuex'
 
 Vue.config.productionTip = false
+Vue.use(Vuex);
 
-/* eslint-disable no-new */
+let store = new Vuex.Store({
+  state:{
+    totalPrice:0
+  },
+  mutations:{
+    increment(state,price){
+      state.totalPrice +=  price;
+    },
+    decrement(state,price){
+      state.totalPrice -= price;
+    }
+  },
+  actions:{
+    increase(context,price){
+      context.commit('increment',price);
+    }
+  }
+})
+
 new Vue({
   el: '#app',
   router,
+  store,
   template: '<App/>',
   components: { App }
 })
