@@ -24,7 +24,7 @@
       </div>
     </div>
     <div class="index-right">
-      <!-- <slide-show :slides="slides" :inv="invTime"></slide-show> -->
+      <slideShow :slides="slides" ></slideShow>
       <div class="index-board-list">
         <div class="index-board-item" v-for="(item, index) in boardList" :class="[{'line-last' : index % 2 !== 0}, 'index-board-' + item.id]">
           <div class="index-board-item-inner">
@@ -41,14 +41,18 @@
 </template>
 
 <script>
+import slideShow from '../components/slideShow'
 export default {
+  components: {
+    slideShow
+  },
   created: function() {
-    this.$http.get('api/getNewsList')
-      .then((res) => {
-        this.newsList = res.data
-      }, (err) => {
-        console.log(err)
-      })
+    // this.$http.get('api/getNewsList')
+    //   .then((res) => {
+    //     this.newsList = res.data
+    //   }, (err) => {
+    //     console.log(err)
+    //   })
   },
   data() {
     return {
@@ -66,7 +70,7 @@ export default {
         {
           src: require('../assets/slideShow/pic3.jpg'),
           title: 'xxx3',
-          href: 'http://xxx.xxx.com'
+          href: 'detail/forecast'
         },
         {
           src: require('../assets/slideShow/pic4.jpg'),
@@ -103,7 +107,27 @@ export default {
           saleout: false
         }
       ],
-      newsList: [],
+      newsList: [{
+          "id": 1,
+          "title": "新闻条目1新闻条目1新闻条目1新闻条目1",
+          "url": "http://starcraft.com"
+        },
+        {
+          "id": 2,
+          "title": "新闻条目2新闻条目2新闻条目2新闻条目2",
+          "url": "http://warcraft.com"
+        },
+        {
+          "id": 3,
+          "title": "新闻条3新闻条3新闻条3",
+          "url": "http://overwatch.com"
+        },
+        {
+          "id": 4,
+          "title": "新闻条4广告发布",
+          "url": "http://hearstone.com"
+        }
+      ],
       productList: {
         pc: {
           title: 'PC产品',
