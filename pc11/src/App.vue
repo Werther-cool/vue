@@ -133,6 +133,8 @@ video {
 
 
 
+
+
 /* HTML5 display-role reset for older browsers */
 
 article,
@@ -150,6 +152,7 @@ section {
 }
 
 body {
+
   line-height: 1;
 }
 
@@ -182,7 +185,7 @@ a {
 }
 
 body {
-  background: #f0f2f5;
+  background: #fff;
   font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei UI", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   font-size: 14px;
   color: #444;
