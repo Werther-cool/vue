@@ -196,12 +196,9 @@ export default {}
   bottom:0;
 }
 .love li:nth-of-type(2){
-
-
   background: url("../assets/t2.png");
 }
 .love li:nth-of-type(2):hover{
-
   background: url("../assets/t2-2.png");
 }
 .love li:nth-of-type(3){
@@ -253,7 +250,7 @@ box-sizing: border-box;
   position: absolute;
   left:0;
   bottom:-45px;
-  background: url("../assets/bantouming.png");
+  background: url(../assets/bantouming.png);
   transition:all 0.5s ease;
   color:#fff;
   line-height: 50px;
