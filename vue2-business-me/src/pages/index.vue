@@ -24,7 +24,7 @@
       </div>
     </div>
     <div class="index-right">
-      <slideShow :slides="slides" ></slideShow>
+      <slideShow :slides="slides" @onchange="doOnChange()"></slideShow>
       <div class="index-board-list">
         <div class="index-board-item" v-for="(item, index) in boardList" :class="[{'line-last' : index % 2 !== 0}, 'index-board-' + item.id]">
           <div class="index-board-item-inner">
@@ -53,6 +53,11 @@ export default {
     //   }, (err) => {
     //     console.log(err)
     //   })
+  },
+  methods: {
+    doOnChange() {
+      console.log('doOnChange');
+    }
   },
   data() {
     return {
