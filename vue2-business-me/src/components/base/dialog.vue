@@ -1,15 +1,15 @@
-<template>
-<div>
-  <div class="dialog-wrap">
-    <div class="dialog-cover" v-if="isShow" @click="closeMyself"></div>
-    <transition name="drop">
-      <div class="dialog-content" v-if="isShow">
-        <p class="dialog-close" @click="closeMyself">x</p>
-        <slot>empty</slot>
-      </div>
-    </transition>
+<template lang="html">
+  <div >
+    <div class="dialog-wrap">
+      <div class="dialog-cover" v-if="isShow" @click="closeMyself"></div>
+        <transition name="drop">
+          <div class="dialog-content" v-if="isShow">
+            <p class="dialog-close" @click="closeMyself">x</p>
+            <slot>empty</slot>
+          </div>
+        </transition>
+    </div>
   </div>
-</div>
 </template>
 
 <script>
@@ -27,11 +27,12 @@ export default {
   },
   methods: {
     closeMyself() {
-      this.$emit('on-close')
+      this.$emit('on-close');
     }
   }
 }
 </script>
+
 
 <style scoped>
 .drop-enter-active {
