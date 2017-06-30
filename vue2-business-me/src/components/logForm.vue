@@ -52,7 +52,7 @@ export default {
         status,
         errorText
       }
-    }
+    },
     passwordErrors() {
       let errorText, status
       if (!/^\w{1,6}$/g.test(this.passwordModel)) {
@@ -69,6 +69,21 @@ export default {
       return {
         status,
         errorText
+      }
+    }
+  },
+  methods: {
+    onLogin() {
+      if (!this.userErrors.status || !this.passwordErrors.status) {
+        this.errorText = '部分选项未通过'
+      } else {
+        this.errorText = ''
+        this.$http.get('api/login')
+          .then((res) => {
+            this.$emit('has-log', res.data)
+          }, (error) => {
+            console.log(error)
+          })
       }
     }
   }

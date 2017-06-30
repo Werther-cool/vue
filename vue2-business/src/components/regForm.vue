@@ -1,20 +1,19 @@
 <template>
-  <div class="login-form">
-    <div class="g-form">
-      <div class="g-form-line" v-for="formLine in formData">
-        <span class="g-form-label">{{ formLine.label }}：</span>
-        <div class="g-form-input">
-          <input type="text" 
-          v-model="formLine.model" placeholder="请输入用户名">
-        </div>
+<div class="login-form">
+  <div class="g-form">
+    <div class="g-form-line" v-for="formLine in formData">
+      <span class="g-form-label">{{ formLine.label }}：</span>
+      <div class="g-form-input">
+        <input type="text" v-model="formLine.model" placeholder="请输入用户名">
       </div>
-      <div class="g-form-line">
-        <div class="g-form-btn">
-          <a class="button" @click="onLogin">登录</a>
-        </div>
+    </div>
+    <div class="g-form-line">
+      <div class="g-form-btn">
+        <a class="button" @click="onLogin">登录</a>
       </div>
     </div>
   </div>
+</div>
 </template>
 
 <script>
@@ -22,19 +21,18 @@ export default {
   props: {
     'isShow': 'boolean'
   },
-  data () {
+  data() {
     return {
-      
+
     }
   },
   computed: {
-    userErrors () {
+    userErrors() {
       let status, errorText
       if (!/@/g.test(this.usernameModel)) {
         status = false
         errorText = '必须包含@'
-      }
-      else {
+      } else {
         status = true
         errorText = ''
       }
@@ -43,13 +41,12 @@ export default {
         errorText
       }
     },
-    passwordErrors () {
+    passwordErrors() {
       let status, errorText
       if (!/@/g.test(this.usernameModel)) {
         status = false
         errorText = '必须包含@'
-      }
-      else {
+      } else {
         status = true
         errorText = ''
       }
@@ -60,7 +57,7 @@ export default {
     }
   },
   methods: {
-    closeMyself () {
+    closeMyself() {
       this.$emit('on-close')
     }
   }
@@ -74,6 +71,7 @@ export default {
   width: 100%;
   height: 100%;
 }
+
 .dialog-cover {
   background: #000;
   opacity: .3;
@@ -84,6 +82,7 @@ export default {
   width: 100%;
   height: 100%;
 }
+
 .dialog-content {
   width: 50%;
   position: fixed;
@@ -98,6 +97,7 @@ export default {
   padding: 2%;
   line-height: 1.6;
 }
+
 .dialog-close {
   position: absolute;
   right: 5px;
@@ -107,6 +107,7 @@ export default {
   text-align: center;
   cursor: pointer;
 }
+
 .dialog-close:hover {
   color: #4fc08d;
 }
