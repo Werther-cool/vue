@@ -1,9 +1,14 @@
 <template lang="html">
   <div class="container">
     <div class="banner">
-      <ul class='banner-ul'>
-        <li><img src="../assets/banner1.png" alt=""></li>
+      <div class="swiper-container" >
+      <ul class='banner-ul swiper-wrapper'>
+        <li class="swiper-slide"><img src="../assets/banner1.png" alt=""></li>
+         <li class="swiper-slide"><img src="../assets/banner2.png" alt=""></li>
+          <li class="swiper-slide"><img src="../assets/banner3.png" alt=""></li>
       </ul>
+    <div class="swiper-pagination"></div>
+  </div>
     </div>
     <div class="phone">
       <div class="qrcode">
@@ -81,10 +86,28 @@
 </template>
 
 <script>
-export default {}
+import Swiper from '../../static/swiper.min.js'
+export default {
+  name: 'main',
+  mounted() {
+    this.lunbo()
+  },
+
+  methods: {
+    lunbo() {
+      var galleryTop = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        autoplay: 5000, //可选选项，自动滑动
+        autoplayDisableOnInteraction: false
+      })
+
+    }
+  }
+}
 </script>
 
 <style lang="css">
+@import url("../../static/swiper.min.css");
 .container{
   /*width: 100%;*/
   text-align: center;
@@ -165,13 +188,12 @@ export default {}
 
 }
 .love .love_hover{
-  height: 136px;
+  height: 125px;
   width: 388px;
   position: absolute;
   left:0;
   bottom:-136px;
-  background: #ff5d8b;
-  opacity: 0.4;
+  background: rgba(255,93,139,0.34);
   color:#fff;
   text-align: center;
   transition:all 0.5s ease;
@@ -181,9 +203,11 @@ export default {}
   font-size:24px;
   margin-top: 20px;
   color:#fff;
+  font-weight: 600;
 }
 .love .love_hover p{
-  font-size: 22px;
+  font-size: 20px;
+  font-weight: lighter;
   color:#fff;
 }
 .love li:nth-of-type(1){
