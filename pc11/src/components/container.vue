@@ -49,12 +49,7 @@
       <h3>经典回顾</h3>
       <p>以游记的方式回顾最精彩动人的片段</p>
       <ul class="clearfix">
-        <li><a href="javascript:;"><img src="../assets/qingyuan.png" alt=""><span>清远桃花湖</span></a></li>
-        <li><a href="javascript:;"><img src="../assets/conghua.png" alt=""><span>从化</span></a></li>
-        <li><a href="javascript:;"><img src="../assets/zhaoq.png" alt=""><span>肇庆羚羊峡</span></a></li>
-        <li><a href="javascript:;"><img src="../assets/shenz.png" alt=""><span>深圳西冲</span></a></li>
-        <li><a href="javascript:;"><img src="../assets/huiz.png" alt=""><span>惠州巽寮湾</span></a></li>
-        <li><a href="javascript:;"><img src="../assets/fous.png" alt=""><span>佛山逢简水乡</span></a></li>
+        <li v-for="item in list" ><a href="javascript:;"><img v-lazy="item.litpic" ><span v-text="item.title">清远桃花湖</span></a></li>
       </ul>
     </div>
     <div class="cousltin">
@@ -87,8 +82,38 @@
 
 <script>
 import Swiper from '../../static/swiper.min.js'
+
 export default {
   name: 'main',
+  data() {
+    return {
+      list: [{
+          litpic: require('../assets/qingyuan.png'),
+          title: "清远桃花湖",
+        },
+        {
+          litpic: require('../assets/conghua.png'),
+          title: "从化",
+        },
+        {
+          litpic: require('../assets/zhaoq.png'),
+          title: "肇庆羚羊峡",
+        },
+        {
+          litpic: require('../assets/huiz.png'),
+          title: "深圳西冲",
+        },
+        {
+          litpic: require('../assets/qingyuan.png'),
+          title: "惠州巽寮湾",
+        },
+        {
+          litpic: require('../assets/fous.png'),
+          title: "佛山逢简水乡",
+        }
+      ]
+    }
+  },
   mounted() {
     this.lunbo()
   },
@@ -108,6 +133,7 @@ export default {
 
 <style lang="css">
 @import url("../../static/swiper.min.css");
+
 .container{
   /*width: 100%;*/
   text-align: center;
@@ -284,6 +310,24 @@ box-sizing: border-box;
 .classic li:hover span{
   bottom:3px;
 }
+
+.classic img[lazy=loading]{
+  width: 389px;
+  height: 235px;
+  background: url('http://via.placeholder.com/389x235');
+}
+img[lazy=loaded]{
+  animation:fade 0.5s;
+}
+@keyframes fade {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
 .cousltin{
   height: 260px;
   width: 1200px;
