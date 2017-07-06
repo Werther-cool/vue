@@ -2,13 +2,52 @@
 <div class="sales-board">
 
   <h2>流量分析</h2>
-
+  <div class="sales-board-line-right">
+    <!-- <v-selection :selections="buyTypes" @on-change="onParamChange('buyType', $event)"></v-selection> -->
+    <Vselection :selections="buyTypes" @on-change="onParamChange('buyType',$event)"></Vselection>
+  </div>
+  <div class="sales-board-line-right">
+    <Vcounter @on-change="onParamChange('buyNum',$event)"></Vcounter>
+  </div>
+  <span>{{buyType.label}}</span>
 </div>
 </template>
 
 <script>
+import Vselection from "../../components/base/selection"
+import Vcounter from "../../components/base/counter"
+export default {
+  components: {
+    Vselection,
+    Vcounter
+  },
+  methods: {
+    onParamChange(attr, val) {
+      this[attr] = val;
 
 
+    }
+  },
+  data() {
+    return {
+      buyType: {},
+      buyNum: {},
+      buyTypes: [{
+          label: '入门版',
+          value: 0
+        },
+        {
+          label: '中级版',
+          value: 1
+        },
+        {
+          label: '高级版',
+          value: 2
+        }
+      ]
+    }
+  }
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
