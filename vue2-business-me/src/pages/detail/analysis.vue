@@ -9,29 +9,36 @@
   <div class="sales-board-line-right">
     <Vcounter @on-change="onParamChange('buyNum',$event)"></Vcounter>
   </div>
-  <span>{{buyType.label}}</span>
+  <div class="sales-board-line-right">
+    <Vchooser :selections="periodList" @on-change="onParamChange('period',$event)"></Vchooser>
+  </div>
+
+  <p>{{buyType.label}}</p>
+  <p>{{buyNum}}</p>
+  <p>{{period.label}}</p>
 </div>
 </template>
 
 <script>
 import Vselection from "../../components/base/selection"
 import Vcounter from "../../components/base/counter"
+import Vchooser from "../../components/base/chooser"
 export default {
   components: {
     Vselection,
-    Vcounter
+    Vcounter,
+    Vchooser
   },
   methods: {
     onParamChange(attr, val) {
       this[attr] = val;
-
-
     }
   },
   data() {
     return {
       buyType: {},
-      buyNum: {},
+      buyNum: 0,
+      period: {},
       buyTypes: [{
           label: '入门版',
           value: 0
@@ -42,6 +49,19 @@ export default {
         },
         {
           label: '高级版',
+          value: 2
+        }
+      ],
+      periodList: [{
+          label: '半年',
+          value: 0
+        },
+        {
+          label: '一年',
+          value: 1
+        },
+        {
+          label: '三年',
           value: 2
         }
       ]

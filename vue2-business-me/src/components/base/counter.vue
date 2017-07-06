@@ -18,11 +18,10 @@ export default {
       type: Number,
       default: 1
     }
-  }
-},
-data() {
+  },
+  data() {
     return {
-      Number: this.min
+      number: this.min
     }
   },
   watch: {
@@ -50,12 +49,14 @@ data() {
       this.number--
     },
     add() {
+      console.log(this.number);
       if (this.number >= this.max) {
         return
       }
       this.number++
     }
   }
+
 }
 </script>
 
