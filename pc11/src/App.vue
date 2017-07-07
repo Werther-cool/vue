@@ -119,22 +119,6 @@ video {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* HTML5 display-role reset for older browsers */
 
 article,
@@ -189,6 +173,7 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei UI", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   font-size: 14px;
   color: #444;
+  position: relative;
 }
 
 .clearfix::after,
