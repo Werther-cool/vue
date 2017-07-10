@@ -10,15 +10,15 @@
     <div class="swiper-pagination"></div>
   </div>
     </div>
-    <div class="phone">
-      <div class="qrcode">
-       <h2>出发就是那么简单！</h2>
-       <p class="qrcode-p">这世上没有谁离不开谁，只有谁更在乎谁。一趟旅程告诉我们，简单的喜欢最长远，懂你的人最温暖。</p>
-        <img src="../assets/fdibu.png" alt="">
-      <p class="qrcode-p2">1+1旅游公众号</p>
-      </div>
+    <div class="phone clearfix">
       <div class="phoneimg">
         <img src="../assets/phone.png" alt="">
+      </div>
+      <div class="qrcode">
+         <h2>出发就是那么简单！</h2>
+         <p class="qrcode-p">这世上没有谁离不开谁，只有谁更在乎谁。一趟旅程告诉我们，简单的喜欢最长远，懂你的人最温暖。</p>
+          <img src="../assets/fdibu.png" alt="">
+        <p class="qrcode-p2">1+1旅游公众号</p>
       </div>
     </div>
     <div class="love">
@@ -32,6 +32,7 @@
           </div>
         </li>
         <li>
+          <img  class="love_img" src="../assets/t2.png" alt="">
           <div class="love_hover">
             <h3>情侣之间的互动</h3>
             <p>增进感情,也考验着对方的用心</p>
@@ -141,6 +142,7 @@ export default {
 }
 .banner{
   width: 100%;
+  height: 1096px;
 
 }
 .banner-ul li{
@@ -151,18 +153,20 @@ export default {
   height: 100%;
 }
 .phone{
-  height: 660px;
+  height: 592px;
   width: 1200px;
-
   margin: 0 auto;
-  border-bottom: 1px solid #ddd;
+
   text-align: center;
+  background: #fff;
+  box-shadow:2px 2px 5px #DDDDDD,-2px -2px 5px #ddd;
+  margin-bottom: 20px;
 }
 .qrcode{
   float: left;
   width: 360px;
   padding-top: 152px ;
-  margin-left: 200px;
+
 }
 .qrcode h2{
   color:#333;
@@ -182,9 +186,10 @@ export default {
   margin-top: 20px;
 }
 .phoneimg{
-  float: right;
+  float: left;
   width: 50%;
   padding-top: 94px;
+  margin-left: 90px;
 }
 .love{
   padding-top: 108px;
@@ -194,68 +199,75 @@ export default {
   background: #fff;
   box-sizing: border-box;
 }
-
-.love h3{
-  font-size: 30px;
-  margin-bottom: 20px;
-}
 .love p{
   color:#949494;
 }
 .love li{
   transition: all 0.5s ease;
-  width: 388px;
-  height: 516px;
+  width: 212px;
+  height: 368px;
   display: inline-block;
   float: left;
-  margin-right: 17px;
+  margin-right: 26px;
   position: relative;
   overflow: hidden;
 
 }
+.love_img{
+  transition:all 0.5s ease;
+
+}
+.love .love_img{
+  width: 212px;
+  height: 294px;
+  display: inline-block;
+}
+
 .love .love_hover{
-  height: 125px;
-  width: 388px;
+  height: 74px;
+  width: 212px;
   position: absolute;
   left:0;
-  bottom:-136px;
-  background: rgba(255,93,139,0.34);
-  color:#fff;
+  bottom:0px;
+  background: #fff;
   text-align: center;
   transition:all 0.5s ease;
 
 }
 .love .love_hover h3{
-  font-size:24px;
+  font-size:16px;
   margin-top: 20px;
-  color:#fff;
-  font-weight: 600;
+  color:#333;
+  margin-bottom: 5px;
+  width: 100%;
+
 }
 .love .love_hover p{
-  font-size: 20px;
+  width: 100%;
+
+  font-size: 12px;
   font-weight: lighter;
-  color:#fff;
+  color:#999;
 }
-.love li:nth-of-type(1){
-  background: url("../assets/t1-2.png");
+
+.love li:hover{
+  width: 242px;
+  height: 410px;
+  box-shadow: 2px 2px 3px #cfcfcf,-2px 2px 3px #cfcfcf;
+  text-align: center;
 }
-.love li:nth-of-type(1):hover{
-  background: url("../assets/t1.png");
+.love li:hover img{
+  width: 242px;
+    height: 336px;
+}
+.love li:hover .love_hover h3{
+    font-size: 18px;
+}
+.love li:hover .love_hover p{
+  font-size:14px
 }
 .love li:hover .love_hover{
-  bottom:0;
-}
-.love li:nth-of-type(2){
-  background: url("../assets/t2.png");
-}
-.love li:nth-of-type(2):hover{
-  background: url("../assets/t2-2.png");
-}
-.love li:nth-of-type(3){
-  background: url("../assets/t3-2.png");
-}
-.love li:nth-of-type(3):hover{
-  background: url("../assets/t3.png");
+  width: 242px;
 }
 .love ul{
   margin-top: 50px;
