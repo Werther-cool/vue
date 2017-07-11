@@ -7,7 +7,7 @@
           <li>1+1动态&emsp;|</li>
           <li>关于我们&emsp;|</li>
           <li>联系我们&emsp;|</li>
-          <li>服务与帮助&emsp;|</li>
+          <li>服务与帮助</li>
         </ul>
         <p>客服座机:020-82516031(服务时间: 周一至五 9:00-18:00)</p>
         <p>客服热线:13802508604或13802508704</p>
@@ -39,12 +39,13 @@ export default {}
 }
 
 .foot_l {
-  margin-top: 45px;
+  box-sizing: border-box;
+  margin-top: 70px;
   float: left;
-  width: 790px;
-  height: 196px;
-  padding-top: 10px;
-  padding-left: 150px;
+  width: 600px;
+  height: 165px;
+
+  padding-left: 60px;
   box-sizing: border-box;
   border-right: 1px solid #787878
 }
@@ -62,22 +63,22 @@ export default {}
 
 .foot_l p {
   text-indent: 10px;
-  color: #d0d0d0;
+  color: #a3a3a3;
   font-weight: 200;
   font-size: 16px;
   margin-top: 10px;
 }
 
 .foot_l .copyright {
-  margin-top: 50px;
-  font-size: 14px;
+  margin-top: 30px;
+  font-size: 16px;
   color: #a3a3a3;
 }
 
 .foot_r {
   float: left;
-  margin-top: 45px;
-  margin-left: 80px;
+  margin-top: 70px;
+  margin-left: 45px;
 }
 
 .foot_r p {

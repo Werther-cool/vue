@@ -1,7 +1,9 @@
 <template>
 <div id="app">
   <myHeader></myHeader>
-  <container></container>
+  <keep-alive>
+    <router-view></router-view>
+  </keep-alive>
   <myFooter>
   </myFooter>
 </div>
@@ -11,7 +13,10 @@
 import myHeader from './components/myHeader.vue'
 import myFooter from './components/myFooter.vue'
 import container from './components/container.vue'
-
+import Team from '@/pages/team'
+import Help from '@/pages/help'
+import About from '@/pages/about'
+import Note from '@/pages/note'
 export default {
   components: {
     myHeader,
@@ -117,6 +122,8 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
+
+
 
 
 /* HTML5 display-role reset for older browsers */

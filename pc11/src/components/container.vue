@@ -4,8 +4,8 @@
       <div class="swiper-container" >
       <ul class='banner-ul swiper-wrapper'>
         <li class="swiper-slide"><img src="../assets/banner1.png" alt=""></li>
-         <li class="swiper-slide"><img src="../assets/banner2.png" alt=""></li>
-          <li class="swiper-slide"><img src="../assets/banner3.png" alt=""></li>
+         <!-- <li class="swiper-slide"><img src="../assets/banner2.png" alt=""></li>
+          <li class="swiper-slide"><img src="../assets/banner3.png" alt=""></li> -->
       </ul>
     <div class="swiper-pagination"></div>
   </div>
@@ -22,10 +22,14 @@
       </div>
     </div>
     <div class="love">
-      <h3>一趟旅行，一见钟情</h3>
-      <p>尽管眼见距离多远，其实惊喜就在身边</p>
+      <div class="item-title">
+        <h3>单身定制</h3>
+        <p>尽管眼见距离多远，其实惊喜就在身边</p>
+      </div>
+
       <ul class="clearfix">
         <li>
+          <img  class="love_img" src="../assets/t1.png" alt="">
           <div class="love_hover">
             <h3>寻找你心仪的另一半</h3>
             <p>众里寻他千百度</p>
@@ -39,19 +43,59 @@
           </div>
         </li>
         <li>
+          <img  class="love_img" src="../assets/t3.png" alt="">
           <div class="love_hover">
             <h3>更多互动中认识的朋友</h3>
             <p>发现三观一致的人</p>
           </div>
       </li>
+        <li>
+        <img  class="love_img" src="../assets/t3.png" alt="">
+        <div class="love_hover">
+          <h3>更多互动中认识的朋友</h3>
+          <p>发现三观一致的人</p>
+        </div>
+        </li>
+          <li>
+          <img  class="love_img" src="../assets/t3.png" alt="">
+          <div class="love_hover">
+            <h3>更多互动中认识的朋友</h3>
+            <p>发现三观一致的人</p>
+          </div>
+          </li>
       </ul>
     </div>
-    <div class="classic">
-      <h3>经典回顾</h3>
-      <p>以游记的方式回顾最精彩动人的片段</p>
-      <ul class="clearfix">
-        <li v-for="item in list" ><a href="javascript:;"><img v-lazy="item.litpic" ><span v-text="item.title">清远桃花湖</span></a></li>
+    <div class="classic-f">
+      <div class="classic ">
+        <div class="item-title">
+          <h3>情侣定制</h3>
+          <p>以游记的方式回顾最精彩动人的片段</p>
+        </div>
+        <div class="classic-con clearfix">
+          <div class="classic-l">
+              <li><img src="../assets/coupon.png" alt=""> <span>爱可以一瞬间 <p>但真情需要时间的灌溉</p> </span></li>
+          </div>
+          <ul class="classic-r clearfix">
+            <li v-for="item in list" ><a href="javascript:;"><img v-lazy="item.litpic" >
+              <span> <i v-text="item.title">清远桃花湖</i>
+              <p v-text="item.describe"></p>
+            </span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="food">
+      <div class="item-title">
+        <h3>美食交友</h3>
+        <p>唯独美食与你不可辜负</p>
+      </div>
+      <ul>
+        <li><img src="../assets/food-1.png" alt=""> <span>爱可以一瞬间 <p>但真情需要时间的灌溉</p> </span></li>
+        <li><img src="../assets/food-2.png" alt=""> <span>爱可以一瞬间 <p>但真情需要时间的灌溉</p> </span></li>
+        <li><img src="../assets/food-1.png" alt=""> <span>爱可以一瞬间 <p>但真情需要时间的灌溉</p> </span></li>
+        <li><img src="../assets/food-1.png" alt=""> <span>爱可以一瞬间 <p>但真情需要时间的灌溉</p> </span></li>
       </ul>
+
     </div>
     <div class="cousltin">
       <ul class="clearfix">
@@ -61,6 +105,7 @@
           <p>单身定制路线能否同时报名2人以上?</p>
           <p>0元购活动如何参与?</p>
           <p>如何绑定手机号码?</p>
+          <span class="divider"></span>
         </li>
         <li>
           <h3>经典回顾</h3>
@@ -68,6 +113,7 @@
           <p>旅行的意义,是遇见美好的你</p>
           <p>520那天,我们在桃花湖邂逅</p>
           <p>故宫禁忌,进入故宫后绝对不能做的事情</p>
+          <span class="divider"></span>
         </li>
         <li>
           <h3>联系我们</h3>
@@ -89,51 +135,50 @@ export default {
   data() {
     return {
       list: [{
-          litpic: require('../assets/qingyuan.png'),
+          litpic: require('../assets/couple-m.png'),
           title: "清远桃花湖",
+          describe: "以游记的方式回顾最精彩",
         },
         {
-          litpic: require('../assets/conghua.png'),
+          litpic: require('../assets/couple-m.png'),
           title: "从化",
+          describe: "以游记的方式回顾最精彩"
         },
         {
-          litpic: require('../assets/zhaoq.png'),
+          litpic: require('../assets/couple-m.png'),
           title: "肇庆羚羊峡",
+          describe: "以游记的方式回顾最精彩",
+
         },
         {
-          litpic: require('../assets/huiz.png'),
+          litpic: require('../assets/couple-m.png'),
           title: "深圳西冲",
-        },
-        {
-          litpic: require('../assets/qingyuan.png'),
-          title: "惠州巽寮湾",
-        },
-        {
-          litpic: require('../assets/fous.png'),
-          title: "佛山逢简水乡",
+          describe: "以游记的方式回顾最精彩",
         }
+
       ]
     }
   },
   mounted() {
-    this.lunbo()
+    // this.lunbo()
   },
 
   methods: {
-    lunbo() {
-      var galleryTop = new Swiper('.swiper-container', {
-        pagination: '.swiper-pagination',
-        autoplay: 5000, //可选选项，自动滑动
-        autoplayDisableOnInteraction: false
-      })
+    // lunbo() {
+    //   var galleryTop = new Swiper('.swiper-container', {
+    //     pagination: '.swiper-pagination',
+    //     autoplay: 5000, //可选选项，自动滑动
+    //     autoplayDisableOnInteraction: false
+    //   })
+    // }
 
-    }
   }
 }
 </script>
 
 <style lang="css">
 @import url("../../static/swiper.min.css");
+
 
 .container{
   /*width: 100%;*/
@@ -191,6 +236,16 @@ export default {
   padding-top: 94px;
   margin-left: 90px;
 }
+.item-title h3{
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 18px;
+}
+.item-title p{
+  color:#999;
+  font-size: 20px;
+  margin-bottom: 36px;
+}
 .love{
   padding-top: 108px;
   height: 740px;
@@ -200,7 +255,8 @@ export default {
   box-sizing: border-box;
 }
 .love p{
-  color:#949494;
+  color:#99999;
+  font-size: 20px;
 }
 .love li{
   transition: all 0.5s ease;
@@ -218,8 +274,10 @@ export default {
 
 }
 .love .love_img{
-  width: 212px;
-  height: 294px;
+  /*width: 212px;
+  height: 294px;*/
+  width: 242px;
+  height: 336px;
   display: inline-block;
 }
 
@@ -256,10 +314,10 @@ export default {
   box-shadow: 2px 2px 3px #cfcfcf,-2px 2px 3px #cfcfcf;
   text-align: center;
 }
-.love li:hover img{
+/*.love li:hover img{
   width: 242px;
-    height: 336px;
-}
+  height: 336px;
+}*/
 .love li:hover .love_hover h3{
     font-size: 18px;
 }
@@ -275,56 +333,90 @@ export default {
 .love li:last-child{
   margin-right: 0;
 }
-.classic{
-width: 1200px;
-height: 800px;
-padding-top: 197px;
-margin: 0 auto;
-background: #fff;
-box-sizing: border-box;
+
+
+.classic-f{
+  width: 100%;
+  height: 804px;
+  background: #fafafa;
 }
-.classic li{
+
+.classic{
+  width: 1200px;
+  height: 804px;
+  padding-top:68px;
+  margin: 0 auto;
+  background: #fafafa;
+  box-sizing: border-box;
+}
+.classic-con{
+  width: 1200px;
+  height: 516px;
+}
+.classic-l{
+  float: left;
+  width: 388px;
+  height:516px;
+  list-style: none;
+  margin-right: 18px;
+  position: relative;
+}
+.classic-r{
+  float: right;
+  width: 794px;
+  height: 516px;
+}
+.classic-r li{
+  width: 388px;
+  height: 250px;
   float: left;
   margin-right: 16px;
-  margin-bottom: 10px;
+  margin-bottom: 18px;
   position: relative;
   overflow: hidden;
 }
-.classic li:nth-of-type(3){
+
+.classic li:nth-of-type(2){
   margin-right: 0;
 }
 .classic li:last-child{
   margin-right: 0;
 }
-.classic h3{
-  font-size: 30px;
-  margin-bottom: 20px;
-}
-.classic p{
-  color:#949494;
-}
-.classic ul{
-  margin-top: 50px;
-}
+
+
 .classic li span{
-    width: 388px;
-  height: 50px;
+  width: 388px;
+  height: 70px;
   position: absolute;
   left:0;
-  bottom:-45px;
-  background: url(../assets/bantouming.png);
+  bottom:-65px;
+  background: rgba(0,0,0,0.3);
   transition:all 0.5s ease;
   color:#fff;
   line-height: 50px;
-  font-size: 20px;
+  font-size: 24px;
+  opacity: 0;
+  text-align: left;
+  text-indent: 20px;
+  line-height: 35px;
+  padding-top: 10px;
+  box-sizing: border-box;
 
+}
+.classic li span p{
+  font-size: 20px;
+  color:#fff;
+  text-align: left;
+  text-indent: 20px;
+  line-height: 20px;
 }
 .classic li:hover span{
   bottom:3px;
+  opacity: 0.8;
 }
 
-.classic img[lazy=loading]{
-  width: 389px;
+/*.classic img[lazy=loading]{
+  width: 388px;
   height: 235px;
   background: url('http://via.placeholder.com/389x235');
 }
@@ -338,7 +430,7 @@ img[lazy=loaded]{
   100%{
     opacity: 1;
   }
-}
+}*/
 
 .cousltin{
   height: 260px;
@@ -349,12 +441,13 @@ img[lazy=loaded]{
   margin-top: 140px;
 }
 .cousltin li{
-  border-left: 1px dashed #ddd;
+
   float: left;
   width: 425px;
   text-align: left;
   text-indent: 20px;
   position: relative;
+
 }
 .cousltin li:last-child{
   width: 330px;
@@ -369,4 +462,59 @@ img[lazy=loaded]{
   color:#666;
   font-size: 16px;
 }
+.divider{
+  position: absolute;
+  right: 82px;
+  top: 20px;
+  display: block;
+  width: 1px;
+  height: 100px;
+  border-left: 1px solid #ddd;
+}
+/*food*/
+.food{
+  width: 1200px;
+  height: 590px;
+  margin: 0 auto;
+}
+
+.food li{
+  float: left;
+  width: 290px;
+  height: 386px;
+  margin-right: 12px;
+  position: relative;
+
+}
+.food li:last-child{
+  margin-right: 0;
+}
+
+.food li span{
+  width: 290px;
+  height: 64px;
+  position: absolute;
+  left:0;
+  bottom:-60px;
+  background: rgba(0,0,0,0.3);
+  transition:all 0.5s ease;
+  color:#fff;
+  line-height: 50px;
+  font-size: 18px;
+  opacity: 0;
+  text-align: center;
+  line-height: 24px;
+  padding-top: 10px;
+  box-sizing: border-box;
+}
+.food li span p{
+  font-size: 14px;
+  text-align: center;
+}
+.food li:hover span{
+  opacity: 0.9;
+  bottom:0;
+}
+
+
 </style>
