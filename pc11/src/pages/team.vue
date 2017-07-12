@@ -88,11 +88,33 @@
         </div>
       </div>
     </div>
+    <div class="note">
+      <div class="note-con">
+        <div class="note-con-l">
+          <h2><span></span>团队定制游记回顾</h2>
+          <div class="btn-pos">
+            <a  class="btn_l"></a>
+            <a class="btn_r"></a>
+          </div>
+
+        </div>
+
+
+      </div>
+
+        <noteList></noteList>
+    </div>
+
   </div>
 </template>
 
 <script>
-export default {}
+import noteList from "../components/noteList"
+export default {
+  components: {
+    noteList
+  }
+}
 </script>
 
 <style scoped>
@@ -112,7 +134,7 @@ export default {}
   width: 717px;
 }
 
-.con-l h2 {
+h2 {
   height: 30px;
   font-size: 20px;
   color: #333;
@@ -121,7 +143,7 @@ export default {}
   margin-bottom: 28px;
 }
 
-.con-l h2 span {
+h2 span {
   margin-top: 5px;
   width: 6px;
   height: 20px;
@@ -248,5 +270,55 @@ export default {}
   color: #999;
 
   background: url(../assets/team-r3-3.png) left center no-repeat;
+}
+
+.note {
+  width: 100%;
+  height: 715px;
+  background: #f8f8f8;
+}
+
+.note-con {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.note-con-l {
+  float: left;
+  width: 717px;
+  position: relative;
+}
+
+.btn-pos {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 104px;
+  height: 50px;
+  padding-top: 30px;
+  padding-left: 20px;
+}
+
+.btn_l {
+  width: 23px;
+  height: 23px;
+  display: inline-block;
+  background: url('../assets/btn-l-n.png');
+  margin-right: 20px;
+}
+
+.btn_l:active {
+  background: url('../assets/btn-l-h.png');
+}
+
+.btn_r {
+  width: 23px;
+  height: 23px;
+  display: inline-block;
+  background: url('../assets/btn-r-n.png')
+}
+
+.btn_r:active {
+  background: url('../assets/btn-r-h.png')
 }
 </style>

@@ -3,7 +3,7 @@
     <div class="banner">
       <div class="swiper-container" >
       <ul class='banner-ul swiper-wrapper'>
-        <li class="swiper-slide"><img src="../assets/banner1.png" alt=""></li>
+        <li class="swiper-slide"><img src="../assets/index-banner.png" alt=""></li>
          <!-- <li class="swiper-slide"><img src="../assets/banner2.png" alt=""></li>
           <li class="swiper-slide"><img src="../assets/banner3.png" alt=""></li> -->
       </ul>
@@ -187,25 +187,28 @@ export default {
 }
 .banner{
   width: 100%;
-  height: 1096px;
-
+  height: 1186px;
+  background: url('../assets/index-banner.png');
+  z-index: 1;
 }
 .banner-ul li{
   text-align: center;
 }
-.banner-ul li img{
+.banner-ul li {
+
   width: 100%;
   height: 100%;
 }
 .phone{
+  z-index: 99;
+  position: relative;
+  top: -60px;
   height: 592px;
   width: 1200px;
   margin: 0 auto;
-
   text-align: center;
   background: #fff;
   box-shadow:2px 2px 5px #DDDDDD,-2px -2px 5px #ddd;
-  margin-bottom: 20px;
 }
 .qrcode{
   float: left;

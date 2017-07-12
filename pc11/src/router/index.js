@@ -11,6 +11,12 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
+      path: '*',
+      redirect:'/index',
+      name: 'IndexPage',
+      component: IndexPage
+    },
+    {
       path: '/index',
       name: 'IndexPage',
       component: IndexPage
