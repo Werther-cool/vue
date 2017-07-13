@@ -96,12 +96,8 @@
             <a  class="btn_l"></a>
             <a class="btn_r"></a>
           </div>
-
         </div>
-
-
       </div>
-
         <noteList></noteList>
     </div>
 
@@ -280,6 +276,7 @@ h2 span {
 
 .note-con {
   width: 1200px;
+  height: 58px;
   margin: 0 auto;
 }
 
