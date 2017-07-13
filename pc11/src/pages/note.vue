@@ -7,6 +7,23 @@
           <span class="bar-btn" :class="{btnOn:barVal==0}" @click="changeBar(0)">最新热门</span>
           <span class="bar-btn" :class="{btnOn:barVal==1}" @click="changeBar(1)">热门游记</span>
           <div class="bar-calendar">
+            <a  class="type-a">全部类型
+              <ul class="ul-a clearfix">
+                <li @click="selectT(0)" :class="{on:nowType == 0}">单身定制</li>
+                <li @click="selectT(1)" :class="{on:nowType == 1}">美食交友</li>
+                <li @click="selectT(2)" :class="{on:nowType == 2}">情侣定制</li>
+                <li @click="selectT(3)" :class="{on:nowType == 3}">团队定制</li>
+              </ul>
+            </a>
+            <div  class="type-a type-a2">2017年07月
+              <div class="type-data">
+                <p class="type-title">2017年</p>
+                <div class="data-con clearfix">
+                  <span v-for="(item,index) in monthList " @click="selectM(index)" :class="{on:nowIndex == index}">{{item}}</span>
+                </div>
+
+              </div>
+            </div>
 
           </div>
         </div>
@@ -20,15 +37,17 @@
 </template>
 
 <script>
-import noteList from "../components/noteList"
-
+import noteList from '../components/noteList'
 export default {
   components: {
-    noteList
+    noteList,
   },
   data() {
     return {
       barVal: 0,
+      nowIndex: 1,
+      nowType: 0,
+      monthList: ["01月", "02月", "03月", "04月", "05月", "06月", "07月", "08月", "09月", "10月", "11月", "12月"],
       noteList: [{
           title: "乘着铁游台湾（高雄、垦丁、花莲、九份）",
           litpic: require("../assets/team-img.png"),
@@ -165,6 +184,12 @@ export default {
   methods: {
     changeBar(val) {
       this.barVal = val;
+    },
+    selectM(index) {
+      this.nowIndex = index;
+    },
+    selectT(val) {
+      this.nowType = val;
     }
 
   }
@@ -185,7 +210,7 @@ export default {
 .bar{
   height: 65px;
   width: 745px;
-  background: green;
+
   padding-top: 20px;
 }
 .bar-btn{
@@ -203,11 +228,12 @@ export default {
 }
 .bar-calendar{
   float: left;
-  width: 310px;
+  width: 317px;
   height: 33px;
-  /*margin-left: 10px;*/
-  background: red;
-
+  margin-left: 30px;
+}
+.bar-calendar:hover .ul-a,.bar-calendar:hover .type-data{
+  display: block;
 }
 .con-l {
   float: left;
@@ -216,6 +242,91 @@ export default {
 .con-r {
   float: right;
   width: 435px;
+}
+.type-a{
+  float: left;
+  width: 153px;
+  height: 33px;
+  display: inline-block;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  background: url(../assets/arrow-d.png) no-repeat 80% center;
+  text-align: center;
+  line-height: 33px;
+  text-indent: -10px;
+  position: relative;
+}
+.bar-calendar .type-a2{
+  width: 160px;
+  border-left: none;
+}
+.ul-a {
+  position: absolute;
+  left: 0;
+  top: 33px;
+  width: 153px;
+  display: none;
+}
+.ul-a li{
+  z-index:99;
+  float: left;
+  width: 153px;
+  height: 33px;
+  border: 1px solid #ddd;
+  border-top: none;
+  background: #fff;
+}
+.type-title{
+  text-indent: 5px;
+  width: 160px;
+  height: 33px;
+  border-bottom:1px solid #ddd;
+  border-right: 1px solid #ddd;
+  background: url(../assets/arrow-l.png) no-repeat 10% center,url(../assets/arrow-r.png) no-repeat 90% center;
+}
+.ul-a li:hover{
+  background: #ffdae5;
+}
+.type-title:hover{
+  background: #ffdae5 url(../assets/arrow-l.png) no-repeat 10% center,url(../assets/arrow-r.png) no-repeat 90% center;
+}
+.type-data{
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 33px;
+  z-index: 99;
+  width: 160px;
+  height: 133px;
+  background: #fff;
+  border-left: 1px solid #ddd;
+}
+.data-con{
+  height: 99px;
+  overflow: hidden;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+.ul-a .on{
+  background: #ffdae5;
+}
+.data-con .on{
+  color:#fff;
+  background: #ff5d8b;
+}
+.type-data span{
+  overflow: hidden;
+  display: inline-block;
+  float: left;
+
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  margin-left: 5px;
+  text-align: center;
+  line-height: 33px;
+  font-size: 12px;
+  text-indent: 2px;
 }
 
 </style>
