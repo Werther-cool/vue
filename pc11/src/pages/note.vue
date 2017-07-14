@@ -30,17 +30,25 @@
           <noteList :list="noteList"></noteList>
       </div>
       <div class="con-r">
-
+        <lineList></lineList>
+        <hotnote></hotnote>
       </div>
+    </div>
+    <div class="">
+
     </div>
   </div>
 </template>
 
 <script>
 import noteList from '../components/noteList'
+import hotnote from '../components/hotnote'
+import line from '../components/line'
 export default {
   components: {
     noteList,
+    hotnote,
+    lineList: line
   },
   data() {
     return {
@@ -197,53 +205,63 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style scoped>
 .banner {
   width: 100%;
   height: 590px;
   background: url(../assets/note-banner.png);
 }
+
 .con {
   width: 1200px;
   margin: 0 auto;
 }
-.bar{
+
+.bar {
   height: 65px;
   width: 745px;
 
   padding-top: 20px;
 }
-.bar-btn{
+
+.bar-btn {
   float: left;
   width: 108px;
   height: 35px;
   text-align: center;
   line-height: 30px;
-  color:#333;
+  color: #333;
   font-size: 16px;
 }
-.bar .btnOn{
-  color:#fff;
+
+.bar .btnOn {
+  color: #fff;
   background: url(../assets/bar-btn-on.png)
 }
-.bar-calendar{
+
+.bar-calendar {
   float: left;
   width: 317px;
   height: 33px;
   margin-left: 30px;
 }
-.bar-calendar:hover .ul-a,.bar-calendar:hover .type-data{
+
+.bar-calendar:hover .ul-a,
+.bar-calendar:hover .type-data {
   display: block;
 }
+
 .con-l {
   float: left;
   width: 745px;
 }
+
 .con-r {
   float: right;
   width: 435px;
 }
-.type-a{
+
+.type-a {
   float: left;
   width: 153px;
   height: 33px;
@@ -256,10 +274,12 @@ export default {
   text-indent: -10px;
   position: relative;
 }
-.bar-calendar .type-a2{
+
+.bar-calendar .type-a2 {
   width: 160px;
   border-left: none;
 }
+
 .ul-a {
   position: absolute;
   left: 0;
@@ -267,8 +287,9 @@ export default {
   width: 153px;
   display: none;
 }
-.ul-a li{
-  z-index:99;
+
+.ul-a li {
+  z-index: 99;
   float: left;
   width: 153px;
   height: 33px;
@@ -276,21 +297,25 @@ export default {
   border-top: none;
   background: #fff;
 }
-.type-title{
+
+.type-title {
   text-indent: 5px;
   width: 160px;
   height: 33px;
-  border-bottom:1px solid #ddd;
+  border-bottom: 1px solid #ddd;
   border-right: 1px solid #ddd;
-  background: url(../assets/arrow-l.png) no-repeat 10% center,url(../assets/arrow-r.png) no-repeat 90% center;
+  background: url(../assets/arrow-l.png) no-repeat 10% center, url(../assets/arrow-r.png) no-repeat 90% center;
 }
-.ul-a li:hover{
+
+.ul-a li:hover {
   background: #ffdae5;
 }
-.type-title:hover{
-  background: #ffdae5 url(../assets/arrow-l.png) no-repeat 10% center,url(../assets/arrow-r.png) no-repeat 90% center;
+
+.type-title:hover {
+  background: #ffdae5 url(../assets/arrow-l.png) no-repeat 10% center, url(../assets/arrow-r.png) no-repeat 90% center;
 }
-.type-data{
+
+.type-data {
   display: none;
   position: absolute;
   left: 0;
@@ -301,24 +326,27 @@ export default {
   background: #fff;
   border-left: 1px solid #ddd;
 }
-.data-con{
+
+.data-con {
   height: 99px;
   overflow: hidden;
   border-bottom: 1px solid #ddd;
   border-right: 1px solid #ddd;
 }
-.ul-a .on{
+
+.ul-a .on {
   background: #ffdae5;
 }
-.data-con .on{
-  color:#fff;
+
+.data-con .on {
+  color: #fff;
   background: #ff5d8b;
 }
-.type-data span{
+
+.type-data span {
   overflow: hidden;
   display: inline-block;
   float: left;
-
   width: 32px;
   height: 32px;
   border-radius: 16px;
@@ -329,4 +357,11 @@ export default {
   text-indent: 2px;
 }
 
+.con-r-item {
+  margin-top: 30px;
+}
+
+.con-r-item h2 {
+  font-size: 16px;
+}
 </style>

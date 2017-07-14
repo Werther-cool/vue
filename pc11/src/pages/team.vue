@@ -51,41 +51,7 @@
             </div>
           </div>
         </div>
-        <div class="con-r-item">
-          <img src="../assets/team-r3.png" alt="">
-          <ul class="con-r-list clearfix">
-            <li>
-              <h4>美食定制：猝不及防吃吃</h4>
-              <div class="li-ft">
-                  <span><img src="../assets/team-r3-1.png" alt=""></span>
-                  <span>小天使</span>
-                  <span>2017-10-01</span>
-                  <span class="like">120</span>
-                  <span class="comment">46</span>
-              </div>
-            </li>
-            <li>
-              <h4>美食定制：猝不及防吃吃</h4>
-              <div class="li-ft">
-                  <span><img src="../assets/team-r3-1.png" alt=""></span>
-                  <span>小天使</span>
-                  <span>2017-10-01</span>
-                  <span class="like">120</span>
-                  <span class="comment">46</span>
-              </div>
-            </li>
-            <li>
-              <h4>美食定制：猝不及防吃吃</h4>
-              <div class="li-ft">
-                  <span><img src="../assets/team-r3-1.png" alt=""></span>
-                  <span>小天使</span>
-                  <span>2017-10-01</span>
-                  <span class="like">120</span>
-                  <span class="comment">46</span>
-              </div>
-            </li>
-          </ul>
-        </div>
+        <hotnote></hotnote>
       </div>
     </div>
     <div class="note">
@@ -98,7 +64,7 @@
           </div>
         </div>
       </div>
-        <noteList></noteList>
+        <noteList :list="noteList"></noteList>
     </div>
 
   </div>
@@ -106,9 +72,46 @@
 
 <script>
 import noteList from "../components/noteList"
+import hotnote from "../components/hotnote"
 export default {
   components: {
-    noteList
+    noteList,
+    hotnote
+  },
+  data() {
+    return {
+      noteList: [{
+          title: "乘着铁游台湾（高雄、垦丁、花莲、九份）",
+          litpic: require("../assets/team-img.png"),
+          describe: "DAY1【香港转机】【起始】最近对出国旅行尤其东南亚很狂热，主要是签证门槛低，好刷签证，相对也比较便宜，还有就是国人少，这次去台湾虽然不能算出国，但是也是我亚洲线路的必须要踩的一个...",
+          icon: require("../assets/team-r3-1.png"),
+          name: "小天使",
+          time: "2017-10-01",
+          like: 12,
+          comment: 40
+        },
+        {
+          title: "乘着铁游台湾（高雄、垦丁、花莲、九份）",
+          litpic: require("../assets/team-img.png"),
+          describe: "DAY1【香港转机】【起始】最近对出国旅行尤其东南亚很狂热，主要是签证门槛低，好刷签证，相对也比较便宜，还有就是国人少，这次去台湾虽然不能算出国，但是也是我亚洲线路的必须要踩的一个...",
+          icon: require("../assets/team-r3-1.png"),
+          name: "小天使",
+          time: "2017-10-01",
+          like: 12,
+          comment: 40
+        },
+        {
+          title: "乘着铁游台湾（高雄、垦丁、花莲、九份）",
+          litpic: require("../assets/team-img.png"),
+          describe: "DAY1【香港转机】【起始】最近对出国旅行尤其东南亚很狂热，主要是签证门槛低，好刷签证，相对也比较便宜，还有就是国人少，这次去台湾虽然不能算出国，但是也是我亚洲线路的必须要踩的一个...",
+          icon: require("../assets/team-r3-1.png"),
+          name: "小天使",
+          time: "2017-10-01",
+          like: 12,
+          comment: 40
+        }
+      ]
+    }
   }
 }
 </script>

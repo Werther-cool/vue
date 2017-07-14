@@ -31,6 +31,7 @@ export default {}
   width: 100%;
   height: 283px;
   background: #28292b;
+  font-family: "微软雅黑"
 }
 
 .foot {
