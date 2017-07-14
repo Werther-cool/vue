@@ -34,8 +34,8 @@
         <hotnote></hotnote>
       </div>
     </div>
-    <div class="">
-
+    <div class="page">
+      <pagination :page-no="pageNo" :current="currentPage" @changePage="changePage( $event)"></pagination>
     </div>
   </div>
 </template>
@@ -44,14 +44,17 @@
 import noteList from '../components/noteList'
 import hotnote from '../components/hotnote'
 import line from '../components/line'
+import pagination from '../components/pagination'
 export default {
   components: {
     noteList,
     hotnote,
-    lineList: line
+    lineList: line,
+    pagination
   },
   data() {
     return {
+      currentPage: 1,
       barVal: 0,
       nowIndex: 1,
       nowType: 0,
@@ -186,7 +189,8 @@ export default {
           like: 12,
           comment: 40
         }
-      ]
+      ],
+      pageNo: 10
     }
   },
   methods: {
@@ -198,9 +202,17 @@ export default {
     },
     selectT(val) {
       this.nowType = val;
+    },
+    requestData() {
+      // 在这里使用ajax或者fetch将对应页传过去获取数据即可
+    },
+    changePage(val) {
+      console.log(val);
     }
-
-  }
+  },
+  watch: {
+    currentPage: 'requestData'
+  },
 
 }
 </script>
@@ -363,5 +375,10 @@ export default {
 
 .con-r-item h2 {
   font-size: 16px;
+}
+
+.page {
+  margin-top: 40px;
+  height: 60px;
 }
 </style>

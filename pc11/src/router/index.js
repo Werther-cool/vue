@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
 import IndexPage from '@/components/container'
 import Team from '@/pages/team'
 import Help from '@/pages/help'

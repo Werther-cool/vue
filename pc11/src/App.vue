@@ -128,6 +128,10 @@ video {
 
 
 
+
+
+
+
 /* HTML5 display-role reset for older browsers */
 
 article,
@@ -196,7 +200,32 @@ body {
   display: block;
 }
 
+#app {
+  overflow: hidden;
+  font-family: "微软雅黑"
+}
+
 #app .font-red {
   color: #ff5d8b;
+}
+
+.mt12 {
+  margin-top: 12px;
+}
+
+.mt18 {
+  margin-top: 18px;
+}
+
+.mt24 {
+  margin-top: 24px;
+}
+
+.mt28 {
+  margin-top: 28px;
+}
+
+.mt30 {
+  margin-top: 30px;
 }
 </style>
