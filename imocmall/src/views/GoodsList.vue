@@ -1,9 +1,9 @@
 <template>
     <div>
-      <nav-header></nav-header>
-      <nav-bread>
+      <!-- <nav-header></nav-header> -->
+      <!-- <nav-bread>
         <span>Goods</span>
-      </nav-bread>
+      </nav-bread> -->
       <div class="accessory-result-page accessory-page">
         <div class="container">
           <div class="filter-nav">
@@ -42,17 +42,17 @@
                   </li>
                 </ul>
               </div>
-              <div class="view-more-normal"
+              <!-- <div class="view-more-normal"
                    v-infinite-scroll="loadMore"
                    infinite-scroll-disabled="busy"
                    infinite-scroll-distance="20">
                 <img src="./../assets/loading-spinning-bubbles.svg" v-show="loading">
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
       </div>
-      <modal v-bind:mdShow="mdShow" v-on:close="closeModal">
+      <!-- <modal v-bind:mdShow="mdShow" v-on:close="closeModal">
           <p slot="message">
              请先登录,否则无法加入到购物车中!
           </p>
@@ -71,17 +71,18 @@
           <a class="btn btn--m" href="javascript:;" @click="mdShowCart = false">继续购物</a>
           <router-link class="btn btn--m btn--red" href="javascript:;" to="/cart">查看购物车</router-link>
         </div>
-      </modal>
+      </modal> -->
       <div class="md-overlay" v-show="overLayFlag" @click.stop="closePop"></div>
-      <nav-footer></nav-footer>
+      <!-- <nav-footer></nav-footer> -->
     </div>
 </template>
 <script>
-    import NavHeader from './../components/NavHeader'
-    import NavFooter from './../components/NavFooter'
-    import NavBread from './../components/NavBread'
-    import Modal from './../components/Modal'
+    // import NavHeader from './../components/NavHeader'
+    // import NavFooter from './../components/NavFooter'
+    // import NavBread from './../components/NavBread'
+    // import Modal from './../components/Modal'
     import axios from 'axios'
+    import qs from 'qs';
 export default {
   data (){
       return{
@@ -120,25 +121,69 @@ export default {
       this.getGoodsList();
   },
   components:{
-        NavHeader,
-        NavFooter,
-        NavBread,
-        Modal
+        // NavHeader,
+        // NavFooter,
+        // NavBread,
+        // Modal
   },
-  motheds:{
+  methods:{
       getGoodsList(flag){
-
-        axios.get("/goods/list",{
-            params:parma
-        }).then((response)=>{
+        var param = {
+              page:this.page,
+              pageSize:this.pageSize,
+              sort:this.sortFlag?1:-1,
+              priceLevel:this.priceChecked
+          };
+        axios.get("/goods/list",qs.stringify(param)).then((response)=>{
             var res = response.data;
             this.loading = false;
             if (flag) {
                 this.goodsList = this.goodsList.concat(res.result.list);
             }
         })
-
-
+      },
+      sortGoods(){
+          this.sortFlag = !this.sortFlag;
+          this.page = 1;
+          this.getGoodsList();
+      },
+      setPriceFilter(index){
+        this.priceChecked = index;
+        this.page = 1;
+        this.getGoodsList();
+      },
+      loadMore(){
+          this.busy = true;
+          setTimeout(() => {
+            this.page++;
+            this.getGoodsList(true);
+          }, 500);
+      },
+      addCart(productId){
+          axios.post("/goods/addCart",{
+            productId:productId
+          }).then((res)=>{
+              var res = res.data;
+              if(res.status==0){
+                  this.mdShowCart = true;
+                  this.$store.commit("updateCartCount",1);
+              }else{
+                  this.mdShow = true;
+              }
+          });
+      },
+      closeModal(){
+        this.mdShow = false;
+        this.mdShowCart = false;
+      },
+      showFilterPop(){
+        this.filterBy=true;
+        this.overLayFlag=true;
+      },
+      closePop(){
+        this.filterBy=false;
+        this.overLayFlag=false;
+        this.mdShowCart = false;
       }
   }
 
