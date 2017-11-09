@@ -134,7 +134,7 @@ export default {
               sort:this.sortFlag?1:-1,
               priceLevel:this.priceChecked
           };
-        axios.get("/goods/list",qs.stringify(param)).then((response)=>{
+        axios.get("/goods/list",).then((response)=>{
             var res = response.data;
             this.loading = false;
             if (flag) {
