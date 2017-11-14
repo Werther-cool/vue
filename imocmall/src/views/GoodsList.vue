@@ -134,13 +134,13 @@ export default {
               sort:this.sortFlag?1:-1,
               priceLevel:this.priceChecked
           };
-        axios.get("/goods/list",).then((response)=>{
-            var res = response.data;
-            this.loading = false;
-            if (flag) {
-                this.goodsList = this.goodsList.concat(res.result.list);
-            }
-        })
+        // axios.get("/goods/list",).then((response)=>{
+        //     var res = response.data;
+        //     this.loading = false;
+        //     if (flag) {
+        //         this.goodsList = this.goodsList.concat(res.result.list);
+        //     }
+        // })
       },
       sortGoods(){
           this.sortFlag = !this.sortFlag;
@@ -160,17 +160,17 @@ export default {
           }, 500);
       },
       addCart(productId){
-          axios.post("/goods/addCart",{
-            productId:productId
-          }).then((res)=>{
-              var res = res.data;
-              if(res.status==0){
-                  this.mdShowCart = true;
-                  this.$store.commit("updateCartCount",1);
-              }else{
-                  this.mdShow = true;
-              }
-          });
+          // axios.post("/goods/addCart",{
+          //   productId:productId
+          // }).then((res)=>{
+          //     var res = res.data;
+          //     if(res.status==0){
+          //         this.mdShowCart = true;
+          //         this.$store.commit("updateCartCount",1);
+          //     }else{
+          //         this.mdShow = true;
+          //     }
+          // });
       },
       closeModal(){
         this.mdShow = false;
