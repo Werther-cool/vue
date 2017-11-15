@@ -60,7 +60,7 @@
               <a class="btn btn--m" href="javascript:;" @click="mdShow = false">关闭</a>
           </div>
       </modal>
-      <modal v-bind:mdShow="mdShowCart" v-on:close="closeModal">
+      <modal v-bind:mdShow="mdShowCart" v-on:close="closeModal"2>
         <p slot="message">
           <svg class="icon-status-ok">
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-status-ok"></use>
