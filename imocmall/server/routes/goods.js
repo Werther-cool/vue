@@ -3,6 +3,7 @@ var router = require('router');
 var mongoose = require('mongoose');
 var Goods = require('../models/goods');
 
+
 mongoose.connect('mongodb://127.0.0.1:27107/dumall');
 
 mongoose.connection.on("connected",function () {
