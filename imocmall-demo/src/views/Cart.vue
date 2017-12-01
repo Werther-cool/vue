@@ -140,6 +140,8 @@
   </div>
 </template>
 <style>
+  @import url(../assets/css/base.css);
+  @import url(../assets/css/login.css);
   .input-sub,.input-add{
     min-width: 40px;
     height: 100%;

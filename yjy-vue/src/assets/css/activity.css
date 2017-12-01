@@ -1,0 +1,375 @@
+/* 白云山 start */
+
+.mountain {
+  width: 100%;
+  height: 17.4rem;
+  display: block;
+  background: url('/phone/public/new/images/mountain_bg.jpg') no-repeat left top;
+  background-size: 7.5rem 17.4rem;
+}
+
+.mountain_btn {
+  width: 4.74rem;
+  height: 1.36rem;
+  display: block;
+  background: url('/phone/public/new/images/mountain_btn.png') no-repeat left top;
+  background-size: 4.74rem 1.36rem;
+  position: absolute;
+  left: 18.5%;
+  top: 7.7rem;
+  z-index: 2;
+}
+
+.mountain_btn:active {
+  background: url('/phone/public/new/images/mountain_btn_on.png') no-repeat left top;
+  background-size: 4.74rem 1.36rem;
+}
+
+.mountain_list {
+  width: 4.6rem;
+  position: absolute;
+  left: 20%;
+  top: 10.5rem;
+  z-index: 3
+}
+
+.mountain_event {
+  width: 4.6rem;
+  position: relative;
+  margin-top: 0.2rem;
+}
+
+.m_e_img {
+  width: 4.6rem;
+  height: 2rem;
+  display: block;
+}
+
+.m_e_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mountain_event p {
+  font-size: 12px;
+  color: #333;
+}
+
+.mountain_event p:nth-of-type(2) {
+  font-size: 12px;
+  color: #808080;
+}
+
+.m_price {
+  font-size: 14px;
+  color: #ff1313;
+}
+
+.m_btn {
+  width: 1.5rem;
+  height: 0.4rem;
+  border-radius: 0.04rem;
+  background: #ffae00;
+  color: #fff;
+  font-size: 12px;
+  position: absolute;
+  right: 0rem;
+  bottom: 0.2rem;
+  line-height: 0.4rem;
+  text-align: center;
+}
+
+.rule_btn {
+  width: 1.8rem;
+  height: 0.8rem;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0.3rem;
+}
+
+.m_rule {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.m_rule img {
+  position: absolute;
+  top: 3rem;
+  left: 1.2rem;
+  width: 5.1rem;
+  height: 6.58rem;
+  z-index: 99;
+}
+
+.m_choose {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.m_choose_main {
+  display: block;
+  width: 5.1rem;
+  height: 6rem;
+  background: url('/phone/public/new/images/mountain_chooise.png') no-repeat left center;
+  background-size: 5.1rem 6rem;
+  position: fixed;
+  top: 3.1rem;
+  left: 1.2rem;
+  z-index: 99;
+  padding-top: 0.73rem;
+}
+
+.m_choose_main ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.m_choose_main ul li {
+  width: 0.88rem;
+  height: 0.58rem;
+  color: #ff9b1a;
+  border: 0.01rem solid #ff9b1a;
+  float: left;
+  line-height: 0.58rem;
+  text-align: center;
+  margin-left: 0.2rem;
+  border-radius: 0.04rem;
+  margin-top: 0.2rem;
+}
+
+.m_choose_main ul .on {
+  color: #fff;
+  background: #ff9b1a;
+}
+
+.m_choose_main ul li:nth-of-type(4) {
+  margin-right: 0;
+}
+
+.m_choose_main .phoneCon {
+  margin-top: 0.1rem;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 0.1rem;
+  padding-left: 0.16rem;
+  padding-right: 0.15rem;
+  width: 5.1rem;
+}
+
+.m_choose_main .phoneCon input:nth-of-type(1) {
+  background: rgba(239, 239, 239, 1);
+}
+
+.m_choose_main .phoneCon input:nth-of-type(2) {
+  background: rgba(239, 239, 239, 1);
+  float: left;
+}
+
+.m_choose_main .phoneCon .btn:nth-of-type(2) {
+  float: left;
+  margin-top: 0.14rem;
+}
+
+.m_choose_main .phoneCon .btn:nth-of-type(1), .m_choose_main .phoneCon .btn:nth-of-type(2) {
+  background-color: #ff9b1a;
+}
+
+.mountain_Suc {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+}
+
+.mountain_Suc img {
+  width: 7.5rem;
+  height: 13.34rem;
+}
+
+
+/* 白云山 end */
+
+
+/* 新人专享 start */
+
+#newUser {
+  background-color: rgba(237, 167, 73, 1);
+  overflow: hidden;
+}
+
+.userCon {
+  margin-top: 0.2rem;
+  padding: 0.2rem;
+}
+
+.userEvent {
+  width: 100%;
+  height: 4.5rem;
+  background: #fff;
+}
+
+.userImg {
+  width: 100%;
+  height: 3.2rem;
+  object-fit: cover;
+  margin-bottom: 0.3rem;
+}
+
+.userE1 {
+  float: left;
+  width: 2.2rem;
+  margin-left: 0.16rem;
+}
+
+.userE1 em {
+  font-size: 17px;
+}
+
+.userE1 p:nth-of-type(1) {
+  color: red;
+  font-size: 12px;
+}
+
+.userE1 p:nth-of-type(2) {
+  color: #999;
+  font-size: 13px;
+  text-decoration: line-through;
+}
+
+.userE2 {
+  float: left;
+  width: 3.26rem;
+}
+
+.userE2 p:nth-of-type(2) {
+  margin-top: 0.05rem;
+}
+
+.userE2 span {
+  /* width: 1.55rem; */
+  height: 0.32rem;
+  background-color: rgba(255, 78, 18, 1);
+  font-size: 13px;
+  line-height: 0.32rem;
+  color: #fff;
+  display: inline-block;
+}
+
+.userE3 {
+  float: right;
+  margin-right: 0.14rem;
+  text-align: center;
+  /* margin-right: 0.2rem; */
+}
+
+.userE3 a {
+  width: 1.3rem;
+  height: 0.42rem;
+  text-align: center;
+  line-height: 0.42rem;
+  background: #ff6600;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 0.04rem;
+  display: inline-block;
+}
+
+.userE3 a i {
+  top: -0.03rem;
+}
+
+.newBg {
+  height: 10.17rem;
+  width: 100%;
+  background: url("/phone/public/new/images/newbg.png") no-repeat left top;
+  background-size: 7.5rem 10.6rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.phoneCon {
+  margin: 0 auto;
+  margin-top: 1.06rem;
+  width: 5.3rem;
+  height: 6.3rem;
+  background-color: rgba(0, 0, 0, 0.25);
+  padding: 0.27rem;
+  text-align: center;
+}
+
+.phoneCon input {
+  height: 0.86rem;
+  border-radius: 0.04rem;
+  text-align: center;
+  font-size: 14px;
+}
+
+.phoneCon input:nth-of-type(1) {
+  height: 0.86rem;
+  width: 4.76rem;
+  border-radius: 0.04rem;
+  text-align: center;
+  font-size: 14px;
+}
+
+.phoneCon input:nth-of-type(2) {
+  width: 2.31rem;
+  margin-top: 0.2rem;
+}
+
+.phoneCon .btn:nth-of-type(1) {
+  width: 2.31rem;
+  height: 0.86rem;
+  margin-top: 0.2rem;
+  border-radius: 0.04rem;
+  text-align: center;
+  background-color: rgba(255, 102, 0, 1);
+  color: #fff;
+  display: table-cell;
+  float: right;
+  line-height: 0.86rem;
+}
+
+.phoneCon .btn:nth-of-type(2) {
+  height: 0.86rem;
+  width: 4.76rem;
+  border-radius: 0.04rem;
+  text-align: center;
+  background-color: rgba(255, 102, 0, 1);
+  color: #fff;
+  display: table;
+  line-height: 0.86rem;
+  margin-top: 0.2rem;
+}
+
+.phoneCon>img {
+  width: 4.29rem;
+  height: 2.48rem;
+}
+
+.new_title {
+  position: absolute;
+  bottom: 0rem;
+  left: 1.93rem;
+  width: 3.64rem;
+  height: 0.5rem;
+}
+
+.newBg2 {
+  height: 9.6rem;
+  width: 100%;
+  background: url("/phone/public/new/images/newbg2.png") no-repeat left top;
+  background-size: 7.5rem 9.11rem;
+  position: relative;
+}
+
+
+/* 新人专享 end */

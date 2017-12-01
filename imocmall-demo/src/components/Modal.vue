@@ -19,7 +19,7 @@
     </div>
 </template>
 <style>
-
+  @import url(../assets/css/base.css);
 </style>
 <script>
     export default{

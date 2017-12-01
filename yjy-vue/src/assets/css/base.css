@@ -1,0 +1,644 @@
+@charset "utf-8";
+
+/*支付other 状态页面*/
+
+.order_other {
+  width: 100%;
+  height: 470px;
+  font-size: 28px;
+  color: #333;
+  position: relative;
+}
+
+.order_other .team_full {
+  width: 100%;
+  height: 100%;
+  background: url(/phone/public/new/images/order-full.png) no-repeat center 50px;
+}
+
+.order_other .team_full>span {
+  position: absolute;
+  top: 350px;
+  width: 100%;
+  display: block;
+  text-align: center;
+  font-size: 40px;
+}
+
+.order_other .team_full>p {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 420px;
+}
+
+.order_other .id_repeat {
+  width: 100%;
+  height: 100%;
+  background: url(/phone/public/new/images/id-repeat.png) no-repeat 190px 50px;
+}
+
+.order_other .id_repeat>span {
+  position: absolute;
+  top: 350px;
+  width: 100%;
+  display: block;
+  text-align: center;
+  font-size: 40px;
+}
+
+.order_other .id_repeat>p {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 420px;
+}
+
+
+/* 支付宝 浏览器跳转 start */
+
+.alipay {
+  text-align: center;
+  padding: 40px;
+  font-size: 28px;
+  width: 100%;
+}
+
+.alipay h3 {
+  width: 560px;
+  height: 120px;
+  text-align: left;
+  font-size: 30px;
+}
+
+.alipay .alipay-span {
+  position: absolute;
+  left: 150px;
+}
+
+.alipay p {
+  margin: 20px;
+}
+
+.alipay img {
+  margin: 20px;
+}
+
+
+/* 支付宝 浏览器跳转 end*/
+
+
+/*支付完成 start*/
+
+.complete_hd {
+  width: 100%;
+  height: 370px;
+  background-color: #f3f3f3;
+}
+
+.hd_back_btn {
+  width: 100%;
+  margin: 180px 96px;
+}
+
+.hd_back {
+  font-size: 26px;
+  height: 60px;
+  width: 220px;
+  display: inline-block;
+  text-align: center;
+  line-height: 60px;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.hd_back_index {
+  background-color: #ffad43;
+}
+
+.hd_back_member {
+  background-color: #ff5d8b;
+  margin-left: 30px;
+}
+
+.hd_title {
+  height: 75px;
+  width: 100%;
+  text-align: center;
+  background: #ff5d8b;
+  color: #fff;
+  font-size: 26px;
+  line-height: 84px;
+  padding: 0 20px;
+  position: relative;
+  font-weight: 300;
+}
+
+.hd_title span {
+  position: relative;
+  font-size: 28px;
+}
+
+.hd-right-more {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: #999;
+}
+
+
+/*.hd_title a {
+  float: right;
+  font-size: 26px;
+  color: #fff;
+}*/
+
+.complete_bd {
+  margin-top: 20px;
+  width: 100%;
+  background-color: #fff;
+}
+
+.complete_hd .hd_prompt {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 126px;
+  height: 50px;
+  /*background: tan;*/
+  text-align: center;
+  font-size: 30px;
+  color: #333;
+  line-height: 50px;
+}
+
+.complete_hd .hd_prompt_icon {
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+  position: relative;
+  top: 10px;
+  left: -5px;
+  background: url(/phone/public/new/images/complete_suc.png) no-repeat left center;
+}
+
+.complete_hd .hd_prompt .hd_prompt_error {
+  background: url(/phone/public/new/images/error.png) no-repeat left center;
+}
+
+.complete_bd .bd_title {
+  float: left;
+  height: 60px;
+  font-size: 24px;
+  font-weight: 300;
+  padding-left: 20px;
+  color: #666;
+  line-height: 60px;
+}
+
+.complete_bd .bd_item {
+  height: 176px;
+  width: 100%;
+  background: #fff;
+  display: inline-block;
+  margin-left: 20px;
+  padding: 20px 30px 20px 0;
+  border-top: 1px solid #ddd;
+}
+
+.complete_bd .item_left {
+  float: left;
+  width: 37%;
+  height: 130px;
+  overflow: hidden;
+}
+
+.complete_bd .item_left img {
+  width: 100%;
+  height: 100%;
+}
+
+.item_list {}
+
+.item_right {
+  float: right;
+  margin-top: 10px;
+  height: 120px;
+  font-size: 24px;
+  width: 60%;
+  position: relative;
+}
+
+.containerP .cont-detail {
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  width: 98%;
+  color: #999;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.containerP .cont-detail .cont-detail-team {
+  display: inline-block;
+  padding-top: 4px;
+  height: 28px;
+  float: left;
+  padding-left: 24px;
+  background: url(/phone/public/new/images/index_tour.png) no-repeat left center;
+}
+
+.containerP .cont-detail .cont-detail-comment {
+  display: inline-block;
+  padding-top: 4px;
+  height: 28px;
+  float: left;
+  margin-left: 20px;
+  padding-left: 30px;
+  background: url(/phone/public/new/images/index_comment.png) no-repeat left center;
+}
+
+.containerP .cont-detail .cont-detail-text {
+  width: 20%;
+}
+
+.containerP .cont-detail-time {
+  padding-top: 4px;
+  float: right;
+  text-align: right;
+}
+
+.containerP .item-title {
+  height: 48px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-height: 25px;
+}
+
+.active-classic {
+  margin-top: 20px;
+}
+
+
+/*支付完成 end*/
+
+
+/*支付信息 star*/
+
+.content {
+  width: 100%;
+}
+
+.order_hd {
+  width: 100%;
+  background: #fff;
+  height: 176px;
+  padding: 20px;
+}
+
+.order_hd .hd-left {
+  width: 37%;
+  height: 131px;
+  float: left;
+}
+
+.order_hd .hd-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.order_hd .hd-right {
+  width: 62%;
+  height: 131px;
+  font-size: 26px;
+  color: #333;
+  float: right;
+  position: relative;
+}
+
+.order_hd .hd-right>p {
+  height: 52px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.order_hd .hd-right>span {
+  font-size: 22px;
+  color: #666;
+  position: absolute;
+  right: 24px;
+  bottom: 0px;
+}
+
+.order_bd {
+  margin-top: 20px;
+  width: 100%;
+  background: #fff;
+  padding: 0 20px;
+  border-top: 1px solid #ddd;
+}
+
+.order_bd .bd_item {
+  width: 100%;
+  font-size: 26px;
+  color: #999;
+  height: 76px;
+  line-height: 76px;
+  /*background: red;*/
+  border-bottom: 1px solid #ddd;
+}
+
+.order_bd .bd_item .bd_item_left {
+  width: 170px;
+  float: left;
+}
+
+.order_bd .bd_item .bd_item_right {
+  color: #333;
+  float: left;
+}
+
+.order_bd .bd_item .bd_item_right .all-money {
+  /*color: #d50000;*/
+  font-size: 30px;
+}
+
+.order_ft {
+  margin-top: 30px;
+  width: 100%;
+}
+
+.order_ft .ft_btn {
+  margin: 0 3%;
+  width: 94%;
+  display: inline-block;
+  height: 82px;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 82px;
+  font-size: 30px;
+  color: #fff;
+  font-weight: 300;
+}
+
+.order_ft .alipay {
+  background-color: #118eea;
+  margin-bottom: 40px;
+}
+
+.order_ft .alipay:active {
+  background-color: #067ad0;
+}
+
+.order_ft .wechatPay {
+  background-color: #1aac19;
+}
+
+.order_ft .wechatPay:active {
+  background-color: #059304;
+}
+
+
+/*支付信息 end*/
+
+
+/*占位*/
+
+.conPlachoder {
+  height: 300px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0);
+}
+
+.content {
+  width: 100%;
+  /*height: 100%;*/
+  margin: 0 auto;
+  overflow-x: hidden;
+  position: relative;
+  display: inline-block;
+}
+
+.back_title {
+  width: 100%;
+  height: 75px;
+  line-height: 75px;
+  background: #ff5d8b url(../images/back.png) no-repeat 3% center;
+  color: #fff;
+  text-align: center;
+  font-size: 30px;
+  display: block;
+}
+
+
+/* 弹出框 */
+
+.black_overlay {
+  display: none;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+  /*background: black;*/
+  background: rgba(0, 0, 0, 0.5);
+  /*opacity: 0.45;
+  filter: Alpha(Opacity=50);*/
+}
+
+.rescan_main {
+  display: none;
+  /*font-family: "sans-serif";*/
+  font-weight: 350;
+  position: absolute;
+  top: 32%;
+  left: 15%;
+  width: 70%;
+  height: 260px;
+  background-color: #FFFFFF;
+  z-index: 201;
+  overflow: auto;
+  border-radius: 20px;
+  color: rgba(67, 67, 67, 1);
+  font-size: 30px/80px;
+  padding: 0px;
+}
+
+
+/*黑色错误弹窗*/
+
+.warning {
+  background: #333;
+  opacity: 0.9;
+  position: fixed;
+  top: 35%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  border-radius: 10px;
+  display: none;
+  text-align: center;
+  font: 26px/100px "微软雅黑";
+  color: #fff;
+  width: 50%
+}
+
+
+/***********************          通用基础        *****************************/
+
+a, img, button, input, textarea, div {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+*, ::after, ::before {
+  padding: 0;
+  margin: 0;
+  /*清除ios默认的点击时产生的高亮区块   rgba(0,0,0,0)*/
+  -webkit-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
+  /*定义盒子模型定义的宽度从边框计算*/
+  -webkit-box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  /*overflow-x: hidden;*/
+  overflow: hidden;
+  overflow-y: auto;
+  /*height: 100%;*/
+}
+
+body {
+  font-family: "Microsoft YaHei", "sans-serif";
+  font-size: 14px;
+  line-height: 1;
+  color: #333;
+  position: relative;
+  background: #f5f5f5;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+input, textarea {
+  border: 0;
+  outline: none;
+  resize: none;
+  /*清楚ios浏览器默认的样式*/
+  -webkit-appearance: none;
+}
+
+img {
+  vertical-align: middle;
+  /*清除3px的bug*/
+  border: 0;
+}
+
+.clearfix::after, .clearfix::before {
+  clear: both;
+  content: '.';
+  height: 0;
+  line-height: 0;
+  visibility: hidden;
+  display: block;
+}
+
+fieldset, img, input, button {
+  border: none;
+  padding: 0;
+  margin: 0;
+  outline-style: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+input {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+select, input {
+  vertical-align: middle;
+}
+
+select, input, textarea {
+  font-size: 12px;
+  margin: 0;
+}
+
+textarea {
+  resize: none;
+}
+
+
+/*防止拖动*/
+
+img {
+  border: 0;
+  vertical-align: middle;
+}
+
+a {
+  color: #666;
+  text-decoration: none;
+}
+
+a:hover {}
+
+h1, h2, h3, h4, h5, h6 {
+  text-decoration: none;
+  font-weight: normal;
+  font-size: 100%;
+}
+
+s, i, em {
+  font-style: normal;
+  text-decoration: none;
+}
+
+.col-red {
+  color: #C81623 !important;
+}
+
+
+/*公共类*/
+
+.fl {
+  float: left
+}
+
+.fr {
+  float: right
+}
+
+.al {
+  text-align: left
+}
+
+.ac {
+  text-align: center
+}
+
+.ar {
+  text-align: right
+}
+
+.hide {
+  display: none
+}

@@ -1,0 +1,77 @@
+{
+  "status": 1,
+  "comment": {
+    "progress": {
+      "five": 50,
+      "four": 30,
+      "three": 10,
+      "two": 5,
+      "one": 5
+    },
+    "average": 3.5,
+    "commentNum": 399,
+    "describe": [{
+        "iconSrc": "/phone/public/new/images/touxiang.jpg",
+        "name": "123",
+        "artical": "swdff",
+        "from": "123123",
+        "star": 5
+      }, {
+        "iconSrc": "/phone/public/new/images/touxiang.jpg",
+        "name": "123",
+        "artical": "swdff",
+        "from": "123123",
+        "star": 4
+      },
+      {
+        "iconSrc": "/phone/public/new/images/touxiang.jpg",
+        "name": "123",
+        "artical": "阿斯利康开始的烦恼快拉上你的看法你卡上电脑付款阿斯达是放松",
+        "from": "123123",
+        "star": 3
+      }, {
+        "iconSrc": "/phone/public/new/images/touxiang.jpg",
+        "name": "123",
+        "artical": "阿斯利康开始的烦恼快拉上你的看法你卡上电脑付款阿斯达是放松",
+        "from": "123123",
+        "star": 5
+      }, {
+        "iconSrc": "/phone/public/new/images/touxiang.jpg",
+        "name": "123",
+        "artical": "阿斯利康开始的烦恼快拉上你的看法你卡上电脑付款阿斯达是放松",
+        "from": "123123",
+        "star": 5
+      }, {
+        "iconSrc": "/phone/public/new/images/touxiang.jpg",
+        "name": "123",
+        "artical": "施蒂利克改名卡省得麻烦看过没看到是干嘛看松",
+        "from": "123123",
+        "star": 5
+      }, {
+        "iconSrc": "/phone/public/new/images/touxiang.jpg",
+        "name": "123",
+        "artical": "施蒂利克改名卡省得麻烦看过没看到是干嘛看松",
+        "from": "123123",
+        "star": 5
+      }, {
+        "iconSrc": "/phone/public/new/images/touxiang.jpg",
+        "name": "123",
+        "artical": "施蒂利克改名卡省得麻烦看过没看到是干嘛看松",
+        "from": "123123",
+        "star": 4
+      }, {
+        "iconSrc": "/phone/public/new/images/touxiang.jpg",
+        "name": "123",
+        "artical": "施蒂利克改名卡省得麻烦看过没看到是干嘛看松",
+        "from": "123123",
+        "star": 4
+      }, {
+        "iconSrc": "/phone/public/new/images/touxiang.jpg",
+        "name": "123",
+        "artical": "施蒂利克改名卡省得麻烦看过没看到是干嘛看松",
+        "from": "123123",
+        "star": 1
+      }
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "status": 1,
+  "comment": {
+    "progress": {
+      "five": 50,
+      "four": 30,
+      "three": 10,
+      "two": 5,
+      "one": 5
+    },
+    "average": 4.6,
+    "commentNum": 399,
+    "describe": [{
+      "iconSrc": "/phone/public/new/images/touxiang.jpg",
+      "name": "123",
+      "artical": "swdff",
+      "from": "123123"
+    }, {
+      "iconSrc": "/phone/public/new/images/touxiang.jpg",
+      "name": "123",
+      "artical": "swdff",
+      "from": "123123"
+    }]
+  }
+}
