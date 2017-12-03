@@ -1,0 +1,216 @@
+#active {
+  background: #fff;
+  position: relative;
+}
+
+.banner {
+  width: 100%;
+  height: 4.6rem;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+}
+
+.instruct {
+  height: 1.1rem;
+  width: 100%;
+  text-align: right;
+  padding-right: 0.26rem;
+}
+
+.instruct span {
+  line-height: 1.1rem;
+  color: #333;
+  font-size: 18px;
+}
+
+.border_arrow {
+  width: 0.16rem;
+  height: 0.16rem;
+  border-top: 0.01rem solid #999;
+  border-right: 0.01rem solid #999;
+  top: -0.03rem;
+}
+
+.actList {
+  padding: 0 0.2rem;
+}
+
+.actList_event {
+  width: 100%;
+  margin-bottom: 0.36rem;
+  padding: 0.15rem 0.16rem 0 0.2rem;
+  box-shadow: 0.02rem 0.02rem 0.02rem #eee, -0.02rem -0.02rem 0.02rem #eee;
+}
+
+.active_img {
+  width: 100%;
+  height: 3.26rem;
+  display: inline-block;
+  position: relative;
+}
+
+.active_img span {
+  position: absolute;
+  left: -0.1rem;
+  top: 0.16rem;
+  color: #fff;
+  text-align: center;
+  line-height: 0.6rem;
+  text-indent: -0.1rem;
+  width: 1.07rem;
+  height: 0.66rem;
+  display: block;
+  font-size: 16px;
+  background: url(../images/hot_span.png) no-repeat left top;
+  background-size: 1.07rem 0.66rem;
+}
+
+.active_img .act2_span {
+  width: 0.47rem;
+  left: 0.22rem;
+  top: -0.1rem;
+  background: url(../images/act2_span.png) no-repeat left top;
+  background-size: 0.47rem 0.63rem;
+}
+
+.act2_dis {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1.24rem;
+  height: 1rem;
+  display: block;
+  background: url(../images/act2_dis.png) no-repeat left top;
+  background-size: 1.24rem 1rem;
+}
+
+.item_title {
+  font-size: 15px;
+  color: #333;
+  word-break: keep-all;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.active_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.active-ft {
+  padding-top: 0.2rem;
+  width: 100%;
+  height: 1.36rem;
+}
+
+.act2 .active-ft {
+  padding-top: 0.1rem;
+  width: 100%;
+  height: 1.49rem;
+  position: relative;
+}
+
+.act2_em {
+  position: absolute;
+  right: 2.3rem;
+  bottom: 0.3rem;
+  width: 0.88rem;
+  height: 0.39rem;
+  display: block;
+  background: url('/phone/public/new/images/fxj.png') no-repeat left center;
+  background-size: 0.88rem 0.39rem;
+}
+
+.active-ft-title {
+  width: 3.5rem;
+  float: left;
+  height: 0.9rem;
+}
+
+.active-ft-title h3 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.active-ft-btn {
+  margin-top: 0.1rem;
+  float: right;
+  width: 2.2rem;
+  height: 0.64rem;
+  text-align: center;
+  font-size: 15px;
+  color: #fff;
+  background: #47aedf;
+  border-radius: 0.1rem;
+  line-height: 0.64rem;
+}
+
+#active .home_black_overlay {
+  background: #fff;
+}
+
+.cash {
+  width: 100%;
+  display: block;
+  height: 100%;
+  position: fixed;
+  top: 10%;
+  left: 0;
+  background: url(/phone/public/new/images/rules.png) no-repeat top center;
+  background-size: 80%;
+  text-align: center;
+}
+
+.act2 .cash {
+  background: url(/phone/public/new/images/rules2.jpg) no-repeat top center;
+  background-size: 100%;
+}
+
+.act3 .cash {
+  background: url(/phone/public/new/images/rule3.jpg) no-repeat top center;
+  background-size: 100%;
+}
+
+.home_rescan_close {
+  position: fixed;
+  width: 0.5rem;
+  height: 0.5rem;
+  top: 9.5rem;
+  left: 47%;
+  display: inline-table;
+}
+
+.home_rescan_close img {
+  width: 100%;
+  height: 100%;
+}
+
+#success img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.deepRed {
+  color: rgba(232, 35, 45, 1);
+}
+
+@media screen and (max-width:321px) {
+  .instruct span {
+    font-size: 14px;
+  }
+  .active-ft-title h3 {
+    font-size: 16px;
+  }
+  .active-ft-btn {
+    font-size: 13px;
+  }
+  .active_img span {
+    font-size: 14px;
+  }
+}

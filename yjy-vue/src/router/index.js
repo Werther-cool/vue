@@ -10,6 +10,11 @@ export default new Router({
   routes: [
     {
       path: '/',
+      name: 'MainPage',
+      component: MainPage
+    },
+    {
+      path: '/nav',
       name: 'Nav',
       component: Nav
     }

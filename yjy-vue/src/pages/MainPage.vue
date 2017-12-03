@@ -170,6 +170,7 @@
 </template>
 
 <script>
+
 export default {
   name:'MainPage',
   data(){
@@ -236,14 +237,14 @@ export default {
            
             },
             initAjax:function () {
-              ajax({
-                  url:"/notes/ajax_get_comment_new",
-                  type:"post",
-                  data:{},
-                  success:function (res) {
-                      vm.newMessage = res;
-                  }
-                })
+              // ajax({
+              //     url:"/notes/ajax_get_comment_new",
+              //     type:"post",
+              //     data:{},
+              //     success:function (res) {
+              //         this.newMessage = res;
+              //     }
+              //   })
             },
             tag:function (tagNum,val) {
               this[tagNum] = val;
@@ -257,48 +258,48 @@ export default {
             /* 切换地点 */
             place:function (val) {
               this.nowPlace = val;
-              ajax({
-                  url:"/index/changeCity",
-                  type:"post",
-                  data:{id:vm.nowPlace},
-                  success:function (res) {
-                    if (res==1) {
-                        window.location.reload();
-                    }
+              // ajax({
+              //     url:"/index/changeCity",
+              //     type:"post",
+              //     data:{id:this.nowPlace},
+              //     success:function (res) {
+              //       if (res==1) {
+              //           window.location.reload();
+              //       }
 
-                  }
-              })
+              //     }
+              // })
             },
             getMore:function () {
-              if (vm.moreFlag==1) {
-                   vm.showLoad=1;
-              ajax({
+              if (this.moreFlag==1) {
+                   this.showLoad=1;
+        /*       ajax({
                   url:"/index/fourth/",
                   type:"post",
-                  data:{'page':vm.page},
+                  data:{'page':this.page},
                   success:function (res) {
                     var res = eval('(' + res + ')');
                    //  判断是否显示loading
                     if (res.strollList.length==0) {
-                      vm.moreFlag=0;
+                      this.moreFlag=0;
                     }
                    //  第一次加载显示赋值,第二次加载拼接
-                    if (vm.page==0) {
-                      vm.strollList=res.strollList;
+                    if (this.page==0) {
+                      this.strollList=res.strollList;
                     }else {
-                      vm.strollList = vm.strollList.concat(res.strollList);
+                      this.strollList = this.strollList.concat(res.strollList);
                     }
-                     vm.showLoad = 0;
-                     vm.page = res.page;
+                     this.showLoad = 0;
+                     this.page = res.page;
                   }
-                })
+                }) */
               }else {
                 return;
               }
 
             },
             limitInit:function () {
-                ajax({
+  /*               ajax({
                   url:"/index/limitBuy",
                   type:"get",
                   data:{"isNew":0},
@@ -306,14 +307,14 @@ export default {
                     var res = eval('('+res+')');
                       console.log(res.limitBuy);
                     if (res.limitBuy) {
-                      vm.limit = res.limitBuy[0];
-                      vm.ticket= res.limitBuy[0].good_type;
-                      vm.countdowm(res.limitBuy[0].linedate);
+                      this.limit = res.limitBuy[0];
+                      this.ticket= res.limitBuy[0].good_type;
+                      this.countdowm(res.limitBuy[0].linedate);
                     }
 
                   }
 
-                })
+                }) */
 
             },
             /* 倒计时 */
@@ -389,7 +390,7 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style lang="css" >
 /* @import url("../assets/css/swiper.min"); */
 /* @import url("../assets/css/device"); */
 @import url("../assets/css/common.css");
