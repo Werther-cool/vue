@@ -118,7 +118,7 @@
   width: 1.48rem;
   height: 0.4rem;
   display: block;
-  background: url(../images/ready.png) no-repeat left center;
+  background: url(../assets/images/ready.png) no-repeat left center;
   background-size: 0.25rem 0.22rem;
   padding-left: 0.34rem;
 }
@@ -271,7 +271,7 @@
 }
 
 .gd-con .con-firstp {
-  background: url(../images/gd-time.png) no-repeat 1.9rem 0.22rem;
+  background: url(../assets/images/gd-time.png) no-repeat 1.9rem 0.22rem;
   background-size: 0.32rem 0.32rem;
   margin-bottom: 0.26rem;
 }
@@ -325,14 +325,14 @@
 
 .sucP {
   margin-top: 0.5rem;
-  background: url(../images/con-suc.png) no-repeat 2.1rem 0.1rem;
+  background: url(../assets/images/con-suc.png) no-repeat 2.1rem 0.1rem;
   background-size: 0.32rem 0.32rem;
   margin-bottom: 0.7rem;
 }
 
 .failP {
   margin-top: 0.5rem;
-  background: url(../images/con-fail.png) no-repeat 1.3rem 0.08rem;
+  background: url(../assets/images/con-fail.png) no-repeat 1.3rem 0.08rem;
   background-size: 0.32rem 0.32rem;
   margin-bottom: 0.7rem;
 }
@@ -394,7 +394,7 @@
   margin-right: 0.2rem;
   width: 0.74rem;
   text-align: left;
-  background: url(../images/more.png) no-repeat right center;
+  background: url(../assets/images/more.png) no-repeat right center;
 }
 
 .group-explain li {
@@ -402,7 +402,7 @@
   width: 1.6rem;
   margin-right: 0.25rem;
   height: 1.22rem;
-  background: url(../images/gr-r.png) no-repeat right center;
+  background: url(../assets/images/gr-r.png) no-repeat right center;
   background-size: 0.13rem 0.26rem;
   padding-top: 0.2rem;
   box-sizing: border-box;
@@ -447,7 +447,7 @@
     font-size: 16px;
   }
   .con-firstp {
-    background: url(../images/gd-time.png) no-repeat 1.9rem 0.32rem;
+    background: url(../assets/images/gd-time.png) no-repeat 1.9rem 0.32rem;
   }
   #groupDetail .groupList-d {
     font-size: 12px;
@@ -475,7 +475,7 @@
   width: 0.9rem;
   height: 0.6rem;
   z-index: 300;
-  background: url(/phone/public/new/images/group-mark.png) left center no-repeat;
+  background: url(../assets/images/group-mark.png) left center no-repeat;
   background-size: 0.9rem 0.6rem;
   color: #fff;
   text-align: center;
@@ -719,7 +719,7 @@
   width: 0.4rem;
   height: 0.4rem;
   display: block;
-  background: url(/phone/public/new/images/group_icon.png) center center no-repeat;
+  background: url(../assets/images/group_icon.png) center center no-repeat;
   background-size: 0.3rem 0.3rem;
   position: absolute;
   right: -0.06rem;
@@ -729,7 +729,7 @@
 .index_hd {
   height: 0.75rem;
   width: 100%;
-  background: #fff url(/phone/public/new/images/logo@2x.png) center center no-repeat;
+  background: #fff url(../assets/images/logo@2x.png) center center no-repeat;
   background-size: 1.26rem 0.54rem;
   padding-top: 0.2rem;
   padding-left: 0.2rem;
@@ -738,7 +738,7 @@
 
 /*.index_hd span {
   padding-left: 0.4rem;
-  background: url(/phone/public/new/images/dingwei.png) left center no-repeat;
+  background: url(../assets/images/dingwei.png) left center no-repeat;
 }*/
 
 .index_hd img {
@@ -1010,14 +1010,14 @@
 /*.index_bd_foot span:first-child {
   padding-left: 0.2rem;
   margin-right: 0.2rem;
-  background: url(/phone/public/new/images/zuji.png) left top no-repeat;
+  background: url(../assets/images/zuji.png) left top no-repeat;
 }*/
 
 
 /*.index_bd_foot span:last-child {
   padding-left: 0.3rem;
   margin-right: 0.2rem;
-  background: url(/phone/public/new/images/pingjia.png) left center no-repeat;
+  background: url(../assets/images/pingjia.png) left center no-repeat;
 }*/
 
 
@@ -1039,7 +1039,7 @@
   height: 0.95rem;
   line-height: 0.95rem;
   text-indent: 0.2rem;
-  background: url(/phone/public/new/images/note_bg.png) no-repeat left bottom;
+  background: url(../assets/images/note_bg.png) no-repeat left bottom;
   background-size: cover;
 }
 
@@ -1091,7 +1091,7 @@
   font-size: 14px;
   display: block;
   line-height: 0.8rem;
-  background: #fff url("/phone/public/new/images/note-more.png") no-repeat 62% center;
+  background: #fff url("../assets/images/note-more.png") no-repeat 62% center;
   background-size: 0.16rem 0.16rem;
 }
 
@@ -1161,7 +1161,7 @@
   height: 100%;
   position: absolute;
   top: 0%;
-  background: url(/phone/public/new/images/red_bg.png) no-repeat center top;
+  background: url(../assets/images/red_bg.png) no-repeat center top;
   text-align: center;
 }
 
@@ -1352,7 +1352,7 @@
 .eDiscount {
   width: 100%;
   height: 20rem;
-  background: url(/phone/public/new/images/ediscount_bg.jpg) no-repeat left top;
+  background: url(../assets/images/ediscount_bg.jpg) no-repeat left top;
   background-size: cover;
   overflow: hidden;
   position: relative;
@@ -1370,7 +1370,7 @@
   /*margin-top: 6.52rem;*/
   height: 14rem;
   display: block;
-  background: url(/phone/public/new/images/ediscount_bag.png) no-repeat center top;
+  background: url(../assets/images/ediscount_bag.png) no-repeat center top;
   overflow: hidden;
 }
 
@@ -1392,7 +1392,7 @@
   width: 3.61rem;
   height: 1.15rem;
   display: inline-block;
-  background: url(/phone/public/new/images/ediscount_look.png) no-repeat center top;
+  background: url(../assets/images/ediscount_look.png) no-repeat center top;
 }
 
 .red_suc_ft {
@@ -1422,7 +1422,7 @@
   left: 5%;
   height: 4.12rem;
   width: 90%;
-  background: url(/phone/public/new/images/input_view.png) no-repeat center top;
+  background: url(../assets/images/input_view.png) no-repeat center top;
   background-size: contain;
   overflow: hidden;
 }
@@ -1448,7 +1448,7 @@
   width: 3.61rem;
   height: 1rem;
   display: inline-block;
-  background: url(/phone/public/new/images/input_get.png) no-repeat center top;
+  background: url(../assets/images/input_get.png) no-repeat center top;
   float: left;
   line-height: 1rem;
   text-align: center;
@@ -1465,7 +1465,7 @@
   text-align: center;
   line-height: 0.88rem;
   color: #fff;
-  background: url(/phone/public/new/images/getcode.png) no-repeat center top;
+  background: url(../assets/images/getcode.png) no-repeat center top;
 }
 
 .eDiscount .getred_sorry {
@@ -1505,7 +1505,7 @@
   margin-top: 0.4rem;
   height: 3.4rem;
   display: block;
-  background: url(/phone/public/new/images/input_view.gif) no-repeat center top;
+  background: url(../assets/images/input_view.gif) no-repeat center top;
   background-size: cover;
   /*-webkit-box-shadow: 5px 5px 5px #ccc;
   -moz-box-shadow: 5px 5px 5px #ccc;*/
@@ -1555,7 +1555,7 @@
 }
 
 #eDiscount .black_overlay {
-  background: url(/phone/public/new/images/black_overlay.png) no-repeat center top;
+  background: url(../assets/images/black_overlay.png) no-repeat center top;
 }
 
 @media screen and (width:360px) {
@@ -1584,7 +1584,7 @@
 }
 
 .not2travel {
-  background: #fff url(/phone/public/new/images/not2travel.png) no-repeat center 0.8rem;
+  background: #fff url(../assets/images/not2travel.png) no-repeat center 0.8rem;
   overflow: auto;
   padding-bottom: 1rem;
 }
@@ -1646,7 +1646,7 @@
   overflow: hidden;
   height: 4.54rem;
   width: 100%;
-  background: url(/phone/public/new/images/personal_bg.png) no-repeat;
+  background: url(../assets/images/personal_bg.png) no-repeat;
   background-size: cover;
 }
 
@@ -1770,16 +1770,16 @@
 .personal_nav span {
   height: 100%;
   padding-left: 0.5rem;
-  background: url(/phone/public/new/images/yaoqing_s.png) no-repeat 0 center;
+  background: url(../assets/images/yaoqing_s.png) no-repeat 0 center;
 }
 
 .personal_nav .photoSpan {
-  background: url(/phone/public/new/images/tadexiangce.png) no-repeat 0 center;
+  background: url(../assets/images/tadexiangce.png) no-repeat 0 center;
 }
 
 #personal .person__show_bg {
   height: 7.05rem;
-  background: url(/phone/public/new/images/person_show_bg.png) no-repeat 0 center;
+  background: url(../assets/images/person_show_bg.png) no-repeat 0 center;
   background-size: cover;
 }
 
@@ -1953,14 +1953,14 @@
   display: inline-block;
   margin-left: 0.2rem;
   padding-left: 0.25rem;
-  background: url(/phone/public/new/images/chutun.png) no-repeat left center;
+  background: url(../assets/images/chutun.png) no-repeat left center;
 }
 
 .cont-detail .cont-detail-comment {
   display: inline-block;
   margin-left: 0.2rem;
   padding-left: 0.27rem;
-  background: url(/phone/public/new/images/pinglun@1.png) no-repeat left center;
+  background: url(../assets/images/pinglun@1.png) no-repeat left center;
 }
 
 .invi_r_p {
@@ -2011,7 +2011,7 @@
 #invitation .pair_show_bg {
   top: 2rem;
   height: 7.05rem;
-  background: url(/phone/public/new/images/pair_show_bg.png) no-repeat 0 center;
+  background: url(../assets/images/pair_show_bg.png) no-repeat 0 center;
   background-size: cover;
 }
 
@@ -2039,7 +2039,7 @@
   transform: translateX(-1.12rem);
   width: 2.24rem;
   height: 3rem;
-  background: url(/phone/public/new/images/addPhoto.png) no-repeat left center;
+  background: url(../assets/images/addPhoto.png) no-repeat left center;
   background-size: cover;
   overflow: hidden;
 }
@@ -2084,7 +2084,7 @@
 
 /*.certification_ul li:first-child {
   text-indent: 12%;
-  background: url(/phone/public/new/images/tishi.png) no-repeat 6% center;
+  background: url(../assets/images/tishi.png) no-repeat 6% center;
 }*/
 
 .certification_ul li span {
@@ -2253,7 +2253,7 @@
   margin-top: 0.03rem;
   font-size: 12px;
   padding-right: 0.3rem;
-  background: url(/phone/public/new/images/pair_nav_hd.png) no-repeat right center;
+  background: url(../assets/images/pair_nav_hd.png) no-repeat right center;
 }
 
 .pair_nav_hd {
@@ -2521,7 +2521,7 @@
 #pair .pair_show_bg {
   top: 2rem;
   height: 7.05rem;
-  background: url(/phone/public/new/images/pair_show_bg.png) no-repeat 0 center;
+  background: url(../assets/images/pair_show_bg.png) no-repeat 0 center;
   background-size: cover;
 }
 
@@ -2645,7 +2645,7 @@
   float: left;
   text-indent: 0.4rem;
   width: 2.5rem;
-  background: url(/phone/public/new/images/pinglun.png) no-repeat left center;
+  background: url(../assets/images/pinglun.png) no-repeat left center;
 }
 
 .bom_r {
@@ -2653,12 +2653,12 @@
   float: right;
   text-indent: 0.35rem;
   width: 1.5rem;
-  background: url(/phone/public/new/images/dianzan.png) no-repeat left center;
-  /*background: url(/phone/public/new/images/dianzanred.png) no-repeat left center;*/
+  background: url(../assets/images/dianzan.png) no-repeat left center;
+  /*background: url(../assets/images/dianzanred.png) no-repeat left center;*/
 }
 
 .album_hd .album_bom .checked {
-  background: url(/phone/public/new/images/dianzanred.png) no-repeat left center;
+  background: url(../assets/images/dianzanred.png) no-repeat left center;
 }
 
 .album_bd {
@@ -2820,7 +2820,7 @@
   font-size: 18px;
   line-height: 0.9rem;
   display: block;
-  background: #ff5d8b url(/phone/public/new/images/back@1x.png) no-repeat 20px center;
+  background: #ff5d8b url(../assets/images/back@1x.png) no-repeat 20px center;
 }
 
 .content {

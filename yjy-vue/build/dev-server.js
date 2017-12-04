@@ -66,6 +66,10 @@ app.use(devMiddleware)
 const staticPath = path.posix.join(config.dev.assetsPublicPath, config.dev.assetsSubDirectory)
 app.use(staticPath, express.static('./static'))
 
+// 新增 调用假数据
+app.use('/mock',express.static('./mock'))
+
+
 const uri = 'http://localhost:' + port
 
 var _resolve

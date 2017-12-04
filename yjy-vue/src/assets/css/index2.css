@@ -16,7 +16,7 @@
 .index_hd {
   height: 1rem;
   width: 100%;
-  background: #fff url(/phone/public/new/images/index2.png) 0.4rem center no-repeat;
+  background: #fff url(../assets/images/index2.png) 0.4rem center no-repeat;
   background-size: 2.13rem 0.56rem;
   padding-top: 0.2rem;
   padding-left: 0.2rem;
@@ -483,7 +483,7 @@
   height: 0.66rem;
   display: block;
   font-size: 16px;
-  background: url(../images/hot_span.png) no-repeat left top;
+  background: url(../assets/images/hot_span.png) no-repeat left top;
   background-size: 1.07rem 0.66rem;
   z-index: 99;
 }

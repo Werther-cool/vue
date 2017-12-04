@@ -115,7 +115,7 @@
   font-size: 18px;
   line-height: 0.9rem;
   display: block;
-  background: #47aedf url(/phone/public/new/images/back@1x.png) no-repeat 20px center;
+  background: #47aedf url(../assets/images/back@1x.png) no-repeat 20px center;
 }
 
 
@@ -222,7 +222,7 @@
   font-size: 18px;
   line-height: 0.9rem;
   display: block;
-  background: #47aedf url(/phone/public/new/images/back@1x.png) no-repeat 20px center;
+  background: #47aedf url(../assets/images/back@1x.png) no-repeat 20px center;
 }
 
 .cash {

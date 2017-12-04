@@ -229,22 +229,21 @@ export default {
                 this.hotlist = result.hotline;
                 this.nationalDayLine = result.nationalDayLine;
                 this.time = result.time;
-
                 this.nowPlace = result.now_city;
-
          
               this.initAjax();
            
             },
             initAjax:function () {
-              // ajax({
-              //     url:"/notes/ajax_get_comment_new",
-              //     type:"post",
-              //     data:{},
-              //     success:function (res) {
-              //         this.newMessage = res;
-              //     }
-              //   })
+          
+            this.$http.get('/mock/banner.json')
+              .then((res) => {
+                console.log(res);
+                this.banner = res.body
+              }, (err) => {
+                console.log(err)
+              })
+
             },
             tag:function (tagNum,val) {
               this[tagNum] = val;
@@ -392,9 +391,9 @@ export default {
 
 <style lang="css" >
 /* @import url("../assets/css/swiper.min"); */
-/* @import url("../assets/css/device"); */
+ @import url("../assets/css/device");
 @import url("../assets/css/common.css");
-/* @import url("../assets/css/index2.css");  */
+@import url("../assets/css/index2.css"); 
 
 
 </style>
