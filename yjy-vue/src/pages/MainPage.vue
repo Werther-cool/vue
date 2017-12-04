@@ -10,9 +10,9 @@
 
       </div>
       <div class="index_banner" v-cloak>
-          <div class="swiper-container swiper-container0" >
+          <div  :options="swiperOption">
              <ul class="swiper-wrapper">
-                <li class=" swiper-slide" v-for="item in banner">
+                <li class="swiper-slide" v-for="item in banner">
                   <a :href="item.adlink"><img :src="item.adsrc" ></a>
                 </li>
               </ul>
@@ -162,7 +162,7 @@
 
 
        <div class="placeholder" v-cloak>
-          <a class="list_more" v-show="showLoad" v-cloak> <img src="/public/new/images/Spinner.gif"></a>
+          <!-- <a class="list_more" v-show="showLoad" v-cloak> <img src="/public/new/images/Spinner.gif"></a> -->
          <p class="ft_p" v-show="!showLoad">---我也是有底线的---</p>
        </div>
    
@@ -196,7 +196,14 @@ export default {
           strollList:[],
           page:0,
           moreFlag:1,
-          newMessage:0
+          newMessage:0,
+          swiperOption:{
+            autoplay: 3500,
+            setWrapperSize :true,
+            paginationClickable :true,
+            mousewheelControl : true,
+            observeParents:true,
+          }
       }
   },
         mounted: function() {
