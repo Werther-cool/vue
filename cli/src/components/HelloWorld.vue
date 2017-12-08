@@ -1,19 +1,17 @@
 <template>
-  <swiper :options="swiperOption" ref="mySwiper">
-    <!-- slides -->
-    <swiper-slide>I'm Slide 1</swiper-slide>
-    <swiper-slide>I'm Slide 2</swiper-slide>
-    <swiper-slide>I'm Slide 3</swiper-slide>
-    <swiper-slide>I'm Slide 4</swiper-slide>
-    <swiper-slide>I'm Slide 5</swiper-slide>
-    <swiper-slide>I'm Slide 6</swiper-slide>
+  <!-- <swiper :options="swiperOption" ref="mySwiper">
+
+    <swiper-slide v-for="item in banners">item</swiper-slide>
    
-    <!-- Optional controls -->
-    <div class="swiper-pagination"  slot="pagination"></div>
-    <div class="swiper-button-prev" slot="button-prev"></div>
-    <div class="swiper-button-next" slot="button-next"></div>
-    <div class="swiper-scrollbar"   slot="scrollbar"></div>
-  </swiper>
+  </swiper> -->
+ <div v-swiper:mySwiper="swiperOption">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" v-for="banner in banners">
+        <img :src="banner">
+      </div>
+    </div>
+    <div class="swiper-pagination swiper-pagination-bullets"></div>
+  </div>
 </template>
 
 <script>
@@ -26,8 +24,8 @@ export default {
           // notNextTick是一个组件自有属性，如果notNextTick设置为true，组件则不会通过NextTick来实例化swiper，也就意味着你可以在第一时间获取到swiper对象，假如你需要刚加载遍使用获取swiper对象来做什么事，那么这个属性一定要是true
           notNextTick: true,
           // swiper configs 所有的配置同swiper官方api配置
-          autoplay: 3000,
-          direction : 'vertical',
+          autoplay: {delay:3000},
+          direction : 'horizontal',
           grabCursor : true,
           setWrapperSize :true,
           autoHeight: true,
@@ -43,7 +41,8 @@ export default {
           debugger: true,
           // swiper callbacks
           // swiper的各种回调函数也可以出现在这个对象中，和swiper官方一样
-        }
+        },
+        banners:['/src/assets/images/pair_g2.png','/src/assets/images/pair_g4.png','/src/assets/images/pair_g2.png','/src/assets/images/pair_g2.png']
     }
   },
   computed: {
@@ -61,6 +60,22 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="css" scoped>
+.my-swiper {
+    height: 300px;
+    width: 100%;
+  }
+      .swiper-slide {
+      text-align: center;
+      font-size: 38px;
+      font-weight: 700;
+      background-color: #eee;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
+    .swiper-pagination  .swiper-pagination-bullet {
+        background-color: red;
+    }
 </style>
