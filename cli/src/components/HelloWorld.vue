@@ -47,9 +47,9 @@ export default {
     }
   },
   computed: {
-    swiper() {
-      return this.$refs.mySwiper.swiper
-    }
+    // swiper() {
+    //   return this.$refs.mySwiper.swiper
+    // }
   },
    mounted() {
       // current swiper instance
