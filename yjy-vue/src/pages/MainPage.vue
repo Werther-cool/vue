@@ -10,13 +10,13 @@
 
       </div>
       <div class="index_banner" v-cloak>
-          <div  :options="swiperOption">
+          <!-- <div  v-swiper:mySwiper="swiperOption">
              <ul class="swiper-wrapper">
                 <li class="swiper-slide" v-for="item in banner">
                   <a :href="item.adlink"><img :src="item.adsrc" ></a>
                 </li>
               </ul>
-            </div>
+            </div> -->
       </div>
 
       <ul class="pair_bd_hd clearfix" v-cloak>
@@ -182,7 +182,12 @@ export default {
           show:0,
           nextWeek:[],
           mySwiper:{},
-          banner:[],
+          banner:[
+                  {"adsrc":"/src/assets/images/pair_g2.png"},
+                  {"adsrc":"/src/assets/images/pair_g4.png"},
+                  {"adsrc":"/src/assets/images/pair_g2.png"},
+                  {"adsrc":"/src/assets/images/pair_g4.png"}
+              ],
           holiday:[],
           loading: '../assets/images/mine_on.png',
           showLoad:0,
@@ -198,11 +203,19 @@ export default {
           moreFlag:1,
           newMessage:0,
           swiperOption:{
-            autoplay: 3500,
-            setWrapperSize :true,
-            paginationClickable :true,
-            mousewheelControl : true,
-            observeParents:true,
+              notNextTick: true,
+              // swiper configs 所有的配置同swiper官方api配置
+              autoplay: {delay:3000},
+              direction : 'horizontal',
+              grabCursor : true,
+              setWrapperSize :true,
+              autoHeight: true,
+              paginationClickable :true,
+              mousewheelControl : true,
+              observeParents:true,
+              // if you need use plugins in the swiper, you can config in here like this
+              // 如果自行设计了插件，那么插件的一些配置相关参数，也应该出现在这个对象中，如下debugger
+              debugger: true,
           }
       }
   },
@@ -229,7 +242,7 @@ export default {
           methods: {
             init: function() {
                 var result={};
-                this.banner   = result.banner;
+                // this.banner   = result.banner;
                 this.thisWeek = result.thisWeek;
                 this.nextWeek = result.nextWeek;
                 this.holiday = result.holiday;
@@ -243,13 +256,13 @@ export default {
             },
             initAjax:function () {
           
-            this.$http.get('/mock/banner.json')
-              .then((res) => {
-                console.log(res);
-                this.banner = res.body
-              }, (err) => {
-                console.log(err)
-              })
+            // this.$http.get('/mock/banner.json')
+            //   .then((res) => {
+            //     console.log(res);
+            //     this.banner = res.body
+            //   }, (err) => {
+            //     console.log(err)
+            //   })
 
             },
             tag:function (tagNum,val) {
