@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import MainPage from '../pages/MainPage'
-import Nav from '../pages/Nav'
+import Banner from '@/components/Banner'
 
 Vue.use(Router)
 
@@ -14,9 +14,14 @@ export default new Router({
       component: MainPage
     },
     {
-      path: '/nav',
-      name: 'Nav',
-      component: Nav
+      path: '/Banner',
+      name: 'Banner',
+      component: Banner
+    },
+    {
+      path: '/HelloWorld',
+      name: 'HelloWorld',
+      component: HelloWorld
     }
   ]
 })

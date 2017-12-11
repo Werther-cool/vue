@@ -1,7 +1,7 @@
 <template>
  <div v-swiper:mySwiper="swiperOption">
     <div class="swiper-wrapper">
-      <div class="swiper-slide" v-for="item in banner">
+      <div class="swiper-slide" v-for="item in banners">
         <a :href="item.adlink"><img :src="item.adsrc"></a>
       </div>
     </div>
@@ -10,7 +10,7 @@
 </template>
 <script>
 export default {
-  name: 'banners',
+  name: 'Banner',
   data () {
     return {
          swiperOption: {
@@ -36,8 +36,13 @@ export default {
           // swiper callbacks
           // swiper的各种回调函数也可以出现在这个对象中，和swiper官方一样
         },
-        banners:['/src/assets/images/pair_g2.png','/src/assets/images/pair_g4.png','/src/assets/images/pair_g2.png','/src/assets/images/pair_g2.png']
-    }
+        banners:[
+                {"adsrc":"/src/assets/images/pair_g2.png"},
+                {"adsrc":"/src/assets/images/pair_g4.png"},
+                {"adsrc":"/src/assets/images/pair_g2.png"},
+                {"adsrc":"/src/assets/images/pair_g4.png"}
+            ]
+        }
   },
   computed: {
     // swiper() {
