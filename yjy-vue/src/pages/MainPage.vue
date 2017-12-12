@@ -1,4 +1,4 @@
-<template>
+<template lang="html">
   <div id="index">
       <div class="index_hd" v-cloak>
 

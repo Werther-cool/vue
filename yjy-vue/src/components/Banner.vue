@@ -1,7 +1,7 @@
-<template>
+<template lang="html">
  <div v-swiper:mySwiper="swiperOption">
     <div class="swiper-wrapper">
-      <div class="swiper-slide" v-for="item in banners">
+      <div class="swiper-slide" v-for="item in slides">
         <a :href="item.adlink"><img :src="item.adsrc"></a>
       </div>
     </div>
@@ -11,6 +11,12 @@
 <script>
 export default {
   name: 'Banner',
+  props:{
+    slides:{
+      type:Array,
+      default:[]
+    }
+  },
   data () {
     return {
          swiperOption: {
