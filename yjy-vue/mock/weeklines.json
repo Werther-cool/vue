@@ -1,0 +1,33 @@
+{
+  "code": 1,
+  "msg": "\u64cd\u4f5c\u6210\u529f",
+  "data": [{
+    "id": "127",
+    "litpic": "\/uploads\/tp\/lines\/201712\/06\/5a27913d499c4.jpg",
+    "title": "\u6d4b\u8bd5^O^\/(\u25cf\u2014\u25cf)",
+    "sellpoint": "\u8303\u5fb7\u8428\u53d1\u7684",
+    "storeprice": 1333,
+    "male_inventory": "112",
+    "female_inventory": "12",
+    "type": "01",
+    "originalprice": 323,
+    "group_status": 0,
+    "linedate": "1512950400",
+    "status": 0,
+    "linetype": 2
+  }, {
+    "id": "127",
+    "litpic": "\/uploads\/tp\/lines\/201712\/06\/5a27913d499c4.jpg",
+    "title": "\u6d4b\u8bd5^O^\/(\u25cf\u2014\u25cf)",
+    "sellpoint": "\u8303\u5fb7\u8428\u53d1\u7684",
+    "storeprice": 1333,
+    "male_inventory": "112",
+    "female_inventory": "12",
+    "type": "01",
+    "originalprice": 323,
+    "group_status": 0,
+    "linedate": "1512950400",
+    "status": 0,
+    "linetype": 2
+  }]
+}

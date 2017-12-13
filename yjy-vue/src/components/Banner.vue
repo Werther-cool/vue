@@ -66,7 +66,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="css" scoped>
-
+a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
 </style>
 
 
