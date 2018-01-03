@@ -50,10 +50,11 @@
           </ul>
         </div>
           <div class="tag_container" v-cloak>
-            <div v-swiper:mySwiper="swiperOption1" class="swiper-container1">
+            <div  v-swiper:mySwiper="swiperOption1" class="swiper-container1">
                <div class="swiper-wrapper">
                   <li  class="swiper-slide"  v-for="item in lineList">
-                    <a class="tag_slide" :href="'/line/detail/' + item.id"><img src="../assets/images/placehold2.jpg" :data-src="item.litpic"></a>
+                    <a class="tag_slide" :href="'/line/detail/' + item.id">
+                    <img  :src="item.litpic"></a>
                     <span class="swiper-icon" v-if="item.linetype == 0"><img src="../assets/images/dsjy.png" alt=""></span>
                     <span class="swiper-icon" v-if="item.linetype == 1"><img src="../assets/images/msjy.png" alt=""></span>
                     <span class="swiper-icon" v-if="item.linetype == 2"><img src="../assets/images/xxdj.png" alt=""></span>
@@ -72,9 +73,7 @@
                 </div>
               </div>
            </div>
-       </div>
-  
-   
+       </div>  
     </div>
 </template>
 
@@ -119,13 +118,26 @@ export default {
               }, (err) => {
                 console.log(err)
               })
+        // this.$http.get('/tp/Api/Ad/banners',{params:{'posId':'14'}})
+        //     .then((res) => {
+        //     console.log(res);
+        //     // this.slides = res.data
+        //     }, (err) => {
+        //     console.log(err)
+        //     })
         this.$http.get('/tp/Api/line/getWeekLines',{params:{'appid':'1','type':'2'}})
         .then((res) => {
-    
         var res = res.bodyText;
         res= eval('('+res+')');
         this.lineList = res.data;    
         console.log(this.lineList);
+        }, (err) => {
+        console.log(err)
+        })
+        this.$http.get('/tp/Api/line/getHotLines')
+        .then((res) => {
+        console.log(res);
+        // this.slides = res.data
         }, (err) => {
         console.log(err)
         })
