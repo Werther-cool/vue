@@ -15,9 +15,16 @@ module.exports = {
       target: 'http://m.1a1trip.com/', 
       changeOrigin: true, 
       pathRewrite: { 
-          '^/tp': '/tp'
+          '^/tp': '/tp',
           } 
-      } 
+      },
+      '/uploads': { 
+        target: 'http://m.1a1trip.com/', 
+        changeOrigin: true, 
+        pathRewrite: { 
+            '^/uploads': '/uploads',
+            } 
+        }  
     },
 
     // Various Dev Server settings

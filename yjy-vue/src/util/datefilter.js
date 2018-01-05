@@ -1,3 +1,5 @@
+import { parse } from "querystring";
+
 let weekday = date => {
     var weekDay = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"];
     var d = new Date(date*1000).getDay();
@@ -12,4 +14,8 @@ let UTday = message => {
     }
     return dformat;
 }
+
+
+
+
 export { weekday ,UTday}

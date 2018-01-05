@@ -145,7 +145,9 @@
 }
 
 .tag_container {
-  padding: 0 0.2rem 0 0.1rem
+  padding: 0 0.2rem 0 0.2rem;
+  overflow: hidden;
+ 
 }
 
 .tag_container li {
@@ -154,7 +156,8 @@
 }
 
 .swiper-container1 {
-  padding-left: 0.12rem;
+  padding-left: 0.09rem;
+  overflow: hidden;
 }
 
 

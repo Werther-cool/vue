@@ -50,7 +50,7 @@
           </ul>
         </div>
           <div class="tag_container" v-cloak>
-            <div  v-swiper:mySwiper="swiperOption1" class="swiper-container1">
+            <div  v-swiper:mySwiper1="swiperOption1" class="swiper-container1">
                <div class="swiper-wrapper">
                   <li  class="swiper-slide"  v-for="item in lineList">
                     <a class="tag_slide" :href="'/line/detail/' + item.id">
@@ -73,7 +73,82 @@
                 </div>
               </div>
            </div>
-       </div>  
+       </div> 
+       
+        <!-- 度假start -->
+       <div class="holiday"  v-cloak v-if="nowPlace==75">
+         <h2><img src="../assets/images/index_t1.png" alt=""></h2>
+            <ul class="holiday_ul">
+               <li  v-for="item in holiday">
+                 <a :href="'/line/detail/' + item.id" class="holiday_img"><img :src="item.litpic"></a>
+                  <p class="holiday_li_title" v-text="item.title">清远桃花湖一日游长标题清远桃花湖一日游长标题width</p>
+                  <span class="deepRed">¥<i v-text="item.storeprice">1800</i>/人</span>
+                  <span  class="swiper-status"><img src="../assets/images/sign.png" alt=""></span>
+                    <span v-if="item.status==1" class="swiper-status"><img src="../assets/images/signfull.png" alt=""></span>
+                    <span v-if="item.status==2" class="swiper-status"><img src="../assets/images/hastravel.png" alt=""></span>
+               </li>
+             </ul>
+       </div> 
+       <!-- 度假end -->
+         <!-- 团队start -->
+       <div class="team_custom" v-cloak v-if="nowPlace==75">
+         <div class="team_title">
+           <h2><img src="../assets/images/index_t2.png" alt=""></h2>
+           <p>-- 我的团队我做主 --</p>
+         </div>
+         <a href="/line/team" class="team_banner_img"><img src="../assets/images/team_banner.png" alt=""></a>
+         <ul class="team_ul clearfix">
+           <li><a href="/line/team" class="team_nav_img"><img  src="../assets/images/team_nav1.png" alt=""></a></li>
+           <li><a href="/line/team" class="team_nav_img"><img    src="../assets/images/team_nav2.png" alt=""></a></li>
+           <li><a href="/line/team" class="team_nav_img"><img src="../assets/images/team_nav3.png" alt=""></a></li>
+           <li><a href="/line/team" class="team_nav_img"><img src="../assets/images/team_nav4.png" alt=""></a></li>
+           <li><a href="/line/team" class="team_nav_img"><img  src="../assets/images/team_nav5.png" alt=""></a></li>
+           <li><a href="/line/team" class="team_nav_img"><img src="../assets/images/team_nav6.png" alt=""></a></li>
+         </ul>
+       </div>
+       <!-- 团队end -->
+
+        <!-- 爆款路线 hotline start -->
+       <div class="hotline" v-cloak >
+         <div class="hotline_title">
+           <h2><img src="../assets/images/index_t3.png" alt=""></h2>
+           <p>-- 精心设计,极致体验 --</p>
+         </div>
+         <div class="hotlist" v-for="(item,index) in hotlist">
+           <a :href="'/line/detail/' + item.id" class="hotlist_img">
+            <img  :src="item.covpic" alt="">
+             <span>0{{index+1}}</span>
+             <div class="hot_mask">
+                <p>{{item.title}}</p>
+             </div>
+           </a>
+         </div>
+       </div>
+       <!-- 爆款路线 hotline end -->
+
+
+       <!--  随便逛逛 start -->
+       <div class="stroll"  v-cloak >
+         <div class="hotline_title">
+           <h2>历史回顾</h2>
+           <p>-- 为你优选 --</p>
+         </div>
+         <div class="stroll_list clearfix" v-for="item in historyLines" >
+           <div class="stroll-l">
+             <a :href="'/line/detail/' + item.id +'?linedateId='+item.linedateId"  class="stroll_img"><img :src="item.litpic" alt=""></a>
+           </div>
+           <a :href="'/line/detail/' + item.id +'?linedateId='+item.linedateId" class="stroll-r">
+              <h3>{{item.title}}</h3>
+              <p class="stroll_time">出发时间 : {{item.linedate | UTday}} ({{item.linedate | weekday}})</p>
+              <p>领队 {{item.nickname}}</p>
+              <!-- <span class="sign-icon" v-if="item.status == 0"><img src="../assets/images/sign.png" alt=""></span>
+              <span class="sign-icon" v-if="item.status == 1"><img src="../assets/images/signfull.png" alt=""></span>
+              <span class="sign-icon" v-if="item.status==2" ><img src="../assets/images/hastravel.png" alt=""></span> -->
+
+           </a>
+         </div>
+       </div>
+       <!-- 随便逛逛 end -->
     </div>
 </template>
 
@@ -87,8 +162,11 @@ export default {
           navNum:0,
           time:'123456',
           nowPlace:75,
-          lineList:[],
-          slides:[],
+          lineList:[],  //本周活动
+          slides:[],    //banner
+          holiday:[],
+          hotlist:[],
+          historyLines:[], //历史回顾
           swiperOption:
                         { 
                         autoplay: true,
@@ -103,7 +181,7 @@ export default {
                         autoplay: false,
                         direction : 'horizontal',
                         slidesPerView: 3,
-                         spaceBetween: 5
+                         spaceBetween: 8
                         },     
       }
   },
@@ -130,14 +208,27 @@ export default {
         var res = res.bodyText;
         res= eval('('+res+')');
         this.lineList = res.data;    
-        console.log(this.lineList);
         }, (err) => {
         console.log(err)
         })
-        this.$http.get('/tp/Api/line/getHotLines')
+        this.$http.get('/tp/Api/line/getHolidayLines')
         .then((res) => {
         console.log(res);
-        // this.slides = res.data
+        this.holiday = res.body.data;
+        }, (err) => {
+        console.log(err)
+        });
+         this.$http.get('/tp/Api/line/getHotLines')
+        .then((res) => {
+        console.log(res);
+        this.hotlist = res.body.data;
+        }, (err) => {
+        console.log(err)
+        })
+         this.$http.get('/tp/Api/line/getHistoryLines')
+        .then((res) => {
+        console.log(res);
+        this.historyLines = res.body.data;
         }, (err) => {
         console.log(err)
         })
