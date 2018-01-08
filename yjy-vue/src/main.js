@@ -7,10 +7,18 @@ import VueResource from 'vue-resource'
 // import VueAwesomeSwiper from 'vue-awesome-swiper'
 import VueAwesomeSwiper from 'vue-awesome-swiper/dist/ssr'
 import 'swiper/dist/css/swiper.css'
+import VueLazyload from 'vue-lazyload'
+
 Vue.config.productionTip = false
 
 Vue.use(VueResource);
 Vue.use(VueAwesomeSwiper);
+
+Vue.use(VueLazyload,{
+  loading:'src/assets/images/placehold.jpg',
+  try:3
+})
+
 
 /* eslint-disable no-new */
 new Vue({

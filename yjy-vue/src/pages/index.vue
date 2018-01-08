@@ -9,7 +9,7 @@
           <div v-swiper:mySwiper="swiperOption">
             <div class="swiper-wrapper">
             <div class="swiper-slide" v-for="item in slides">
-                <a :href="item.adlink"><img :src="item.adsrc"></a>
+                <a :href="item.adlink"><img v-lazy="item.adsrc"></a>
             </div>
             </div>
              <div class="swiper-pagination"></div>
@@ -44,9 +44,9 @@
       <div class="pair_nav" v-cloak v-if="nowPlace==75">
         <div class="pair_nav_hd clearfix">
           <ul class="clearfix">
-            <li :class="{'nav_on': navNum==0}" @click="nav(0)"><a>本周活动</a></li>
-            <li :class="{'nav_on': navNum==1}" @click="nav(1)"><a>下周活动</a> </li>
-            <li :class="{'nav_on': navNum==2}" @click="nav(2)"><a>纪念月活动</a> </li>
+            <li :class="{'nav_on': navNum==1}" @click="nav(1)"><a>本周活动</a></li>
+            <li :class="{'nav_on': navNum==2}" @click="nav(2)"><a>下周活动</a> </li>
+            <li :class="{'nav_on': navNum==3}" @click="nav(3)"><a>纪念月活动</a> </li>
           </ul>
         </div>
           <div class="tag_container" v-cloak>
@@ -54,7 +54,7 @@
                <div class="swiper-wrapper">
                   <li  class="swiper-slide"  v-for="item in lineList">
                     <a class="tag_slide" :href="'/line/detail/' + item.id">
-                    <img  :src="item.litpic"></a>
+                    <img  v-lazy="item.litpic"></a>
                     <span class="swiper-icon" v-if="item.linetype == 0"><img src="../assets/images/dsjy.png" alt=""></span>
                     <span class="swiper-icon" v-if="item.linetype == 1"><img src="../assets/images/msjy.png" alt=""></span>
                     <span class="swiper-icon" v-if="item.linetype == 2"><img src="../assets/images/xxdj.png" alt=""></span>
@@ -80,7 +80,7 @@
          <h2><img src="../assets/images/index_t1.png" alt=""></h2>
             <ul class="holiday_ul">
                <li  v-for="item in holiday">
-                 <a :href="'/line/detail/' + item.id" class="holiday_img"><img :src="item.litpic"></a>
+                 <a :href="'/line/detail/' + item.id" class="holiday_img"><img v-lazy="item.litpic"></a>
                   <p class="holiday_li_title" v-text="item.title">清远桃花湖一日游长标题清远桃花湖一日游长标题width</p>
                   <span class="deepRed">¥<i v-text="item.storeprice">1800</i>/人</span>
                   <span  class="swiper-status"><img src="../assets/images/sign.png" alt=""></span>
@@ -116,7 +116,7 @@
          </div>
          <div class="hotlist" v-for="(item,index) in hotlist">
            <a :href="'/line/detail/' + item.id" class="hotlist_img">
-            <img  :src="item.covpic" alt="">
+            <img  v-lazy="item.covpic" alt="">
              <span>0{{index+1}}</span>
              <div class="hot_mask">
                 <p>{{item.title}}</p>
@@ -135,7 +135,7 @@
          </div>
          <div class="stroll_list clearfix" v-for="item in historyLines" >
            <div class="stroll-l">
-             <a :href="'/line/detail/' + item.id +'?linedateId='+item.linedateId"  class="stroll_img"><img :src="item.litpic" alt=""></a>
+             <a :href="'/line/detail/' + item.id +'?linedateId='+item.linedateId"  class="stroll_img"><img v-lazy="item.litpic" alt=""></a>
            </div>
            <a :href="'/line/detail/' + item.id +'?linedateId='+item.linedateId" class="stroll-r">
               <h3>{{item.title}}</h3>
@@ -165,6 +165,7 @@ export default {
           time:'123456',
           nowPlace:75,
           lineList:[],  //本周活动
+          lineCache:[], //本周活动的父级,用以缓存数据
           slides:[],    //banner
           holiday:[],
           hotlist:[],
@@ -198,18 +199,16 @@ export default {
               }, (err) => {
                 console.log(err)
               })
-        // this.$http.get('/tp/Api/Ad/banners',{params:{'posId':'14'}})
+        // this.$http.get('/tp/Api/Ad/banners',{params:{'posId':14}})
         //     .then((res) => {
         //     console.log(res);
-        //     // this.slides = res.data
+        //  this.slides = res.body.data;
         //     }, (err) => {
         //     console.log(err)
         //     })
         this.$http.get('/tp/Api/line/getWeekLines',{params:{'appid':'1','type':'2'}})
-        .then((res) => {
-        var res = res.bodyText;
-        res= eval('('+res+')');
-        this.lineList = res.data;    
+        .then((res) => {   
+         this.lineList = res.body.data;
         }, (err) => {
         console.log(err)
         })
@@ -234,14 +233,47 @@ export default {
         }, (err) => {
         console.log(err)
         })
+        //  this.$http.get('/tp/Api/Ad/banners',{params:{'posId':16}})
+        // .then((res) => {
+        // console.log(res);
+        // this.historyLines = res.body.data;
+        // }, (err) => {
+        // console.log(err)
+        // })
+        this.nav(1);
   },
   methods:{
-        nav:function (navNum) {
+        nav(navNum) {
+          
             this.navNum =navNum;
-            // this.mySwiper.update({
-            // updateTranslate:true
-            // });
+            /* 先判断是否请求过 */
+            if ( !this.lineCache[navNum]) {
+                this.getWeekLine(navNum);
+               
+            }else{
+              this.lineList=this.lineCache[navNum];
+                // console.log(this.lineCache);
+              
+            }
+         
+            setTimeout(() => {
+           
+               this.mySwiper1.update({
+              updateTranslate:true
+              });
+            }, 300);
+           
         },
+        getWeekLine(num){
+            this.$http.get('/tp/Api/line/getWeekLines',{params:{'appid':'1','type':num}})
+          .then((res) => {   
+          this.lineCache[num] = res.body.data;
+           console.log(this.lineCache);
+           this.lineList = this.lineCache[num];
+          }, (err) => {
+          console.log(err)
+          })
+        }
   },
   filters:{
        sub: mes=> {
