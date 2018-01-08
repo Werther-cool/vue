@@ -149,11 +149,13 @@
          </div>
        </div>
        <!-- 随便逛逛 end -->
+       <FootNav></FootNav>
     </div>
 </template>
 
 <script>
 import Banner from '../components/Banner'
+import FootNav from '../components/FootNav'
 import * as datefilter from '../util/datefilter'
 export default {
   name:'Index',
@@ -186,7 +188,7 @@ export default {
       }
   },
   components:{
-     
+     FootNav
   },
   created:function () {
          this.$http.get('/mock/banner.json')
