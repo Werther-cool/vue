@@ -15,7 +15,7 @@ Vue.use(VueResource);
 Vue.use(VueAwesomeSwiper);
 
 Vue.use(VueLazyload,{
-  loading:'src/assets/images/placehold.jpg',
+  loading:'/static/images/placehold.jpg',
   try:3
 })
 

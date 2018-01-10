@@ -9,7 +9,7 @@
           <div v-swiper:mySwiper="swiperOption">
             <div class="swiper-wrapper">
             <div class="swiper-slide" v-for="item in slides">
-                <a :href="item.adlink"><img v-lazy="item.adsrc"></a>
+                <a :href="item.bannerThumb"><img v-lazy="item.bannerImg"></a>
             </div>
             </div>
              <div class="swiper-pagination"></div>
@@ -192,20 +192,20 @@ export default {
      FootNav
   },
   created:function () {
-         this.$http.get('/mock/banner.json')
-              .then((res) => {
-                console.log(res);
-                this.slides = res.body
-              }, (err) => {
-                console.log(err)
-              })
-        // this.$http.get('/tp/Api/Ad/banners',{params:{'posId':14}})
-        //     .then((res) => {
-        //     console.log(res);
-        //  this.slides = res.body.data;
-        //     }, (err) => {
-        //     console.log(err)
-        //     })
+        //  this.$http.get('/mock/banner.json')
+        //       .then((res) => {
+        //         console.log(res);
+        //         this.slides = res.body
+        //       }, (err) => {
+        //         console.log(err)
+        //       })
+        this.$http.get('/tp/Api/Ad/banners',{params:{'posId':14}})
+            .then((res) => {
+            console.log(res);
+         this.slides = res.body.data;
+            }, (err) => {
+            console.log(err)
+            })
         this.$http.get('/tp/Api/line/getWeekLines',{params:{'appid':'1','type':'2'}})
         .then((res) => {   
          this.lineList = res.body.data;
