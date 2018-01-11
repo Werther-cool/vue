@@ -26,7 +26,7 @@
         <div class="objective" v-cloak>
             <img src="../assets/images/objective.png" alt="" >
         </div>
-         
+
         <div class="index_active clearfix" v-cloak v-if="nowPlace==75">
             <a href="/line/newUserOnly" class="active_event">
                 <h3>新人专享</h3>
@@ -73,8 +73,8 @@
                 </div>
               </div>
            </div>
-       </div> 
-       
+       </div>
+
         <!-- 度假start -->
        <div class="holiday"  v-cloak v-if="nowPlace==75">
          <h2><img src="../assets/images/index_t1.png" alt=""></h2>
@@ -88,7 +88,7 @@
                     <span v-if="item.status==2" class="swiper-status"><img src="../assets/images/hastravel.png" alt=""></span>
                </li>
              </ul>
-       </div> 
+       </div>
        <!-- 度假end -->
          <!-- 团队start -->
        <div class="team_custom" v-cloak v-if="nowPlace==75">
@@ -171,7 +171,7 @@ export default {
           hotlist:[],
           historyLines:[], //历史回顾
           swiperOption:
-                        { 
+                        {
                         autoplay: true,
                         direction : 'horizontal',
                         pagination: {
@@ -180,12 +180,12 @@ export default {
                                 },
                         },
            swiperOption1:
-                        { 
+                        {
                         autoplay: false,
                         direction : 'horizontal',
                         slidesPerView: 3,
                          spaceBetween: 8
-                        },     
+                        },
       }
   },
   components:{
@@ -201,34 +201,51 @@ export default {
         //       })
         this.$http.get('/tp/Api/Ad/banners',{params:{'posId':14}})
             .then((res) => {
-            console.log(res);
+
          this.slides = res.body.data;
             }, (err) => {
             console.log(err)
             })
         this.$http.get('/tp/Api/line/getWeekLines',{params:{'appid':'1','type':'2'}})
-        .then((res) => {   
+        .then((res) => {
          this.lineList = res.body.data;
         }, (err) => {
         console.log(err)
         })
+
+         this.$http.get('/tp/Api/line/getCityList')
+         .then((res) => {
+       console.log(res);
+          var res = res.body.data;
+            for(let i =0;i<res.length;i++){
+              if (res[i].status==1){
+
+                this.nowPlace=res[i].id;
+                  console.log( this.nowPlace);
+              }
+            }
+
+         }, (err) => {
+         console.log(err)
+         })
+
         this.$http.get('/tp/Api/line/getHolidayLines')
         .then((res) => {
-        console.log(res);
+
         this.holiday = res.body.data;
         }, (err) => {
         console.log(err)
         });
          this.$http.get('/tp/Api/line/getHotLines')
         .then((res) => {
-        console.log(res);
+
         this.hotlist = res.body.data;
         }, (err) => {
         console.log(err)
         })
          this.$http.get('/tp/Api/line/getHistoryLines')
         .then((res) => {
-        console.log(res);
+
         this.historyLines = res.body.data;
         }, (err) => {
         console.log(err)
@@ -244,35 +261,46 @@ export default {
   },
   methods:{
         nav(navNum) {
-          
+
             this.navNum =navNum;
             /* 先判断是否请求过 */
             if ( !this.lineCache[navNum]) {
                 this.getWeekLine(navNum);
-               
+
             }else{
               this.lineList=this.lineCache[navNum];
                 // console.log(this.lineCache);
-              
+
             }
-         
+
             setTimeout(() => {
-           
+
                this.mySwiper1.update({
               updateTranslate:true
               });
             }, 300);
-           
+
         },
         getWeekLine(num){
             this.$http.get('/tp/Api/line/getWeekLines',{params:{'appid':'1','type':num}})
-          .then((res) => {   
+          .then((res) => {
           this.lineCache[num] = res.body.data;
            console.log(this.lineCache);
            this.lineList = this.lineCache[num];
           }, (err) => {
           console.log(err)
           })
+        },
+        place(num){
+            this.nowPlace = num;
+             this.$http.get('/tp/Api/line/getCityList',{params:{'id':num}})
+                    .then((res) => {
+
+
+                  //window.location.reload();
+                    }, (err) => {
+                    console.log(err)
+                    })
         }
   },
   filters:{
@@ -285,7 +313,7 @@ export default {
         },
         weekday:datefilter.weekday,
         UTday:datefilter.UTday
-       
+
   }
 }
 </script>
@@ -293,7 +321,7 @@ export default {
 <style lang="css" >
 @import url("../assets/css/device");
 @import url("../assets/css/common.css");
-@import url("../assets/css/index2.css"); 
+@import url("../assets/css/index2.css");
 
 .index_banner a{
     width: 100%;
