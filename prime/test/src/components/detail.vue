@@ -1,8 +1,9 @@
 <template>
-    <div>1222</div>
+  <p>aaaaa</p>
 </template>
 <script>
 export default {
   name:"Detail"
 }
 </script>
+

@@ -1,8 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import MainPage from '../pages/MainPage'
-import Index from '../pages/index'
-import Detail from '../pages/detail'
+import HelloWorld from '@/components/HelloWorld'
+import Detail from '@/components/detail'
 
 Vue.use(Router)
 
@@ -10,14 +9,13 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Index',
-      component: Index
+      name: 'HelloWorld',
+      component: HelloWorld
     },
     {
       path: '/detail',
       name: 'Detail',
       component: Detail
     }
-    
   ]
 })
