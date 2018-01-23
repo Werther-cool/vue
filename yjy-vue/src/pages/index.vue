@@ -53,8 +53,8 @@
             <div  v-swiper:mySwiper1="swiperOption1" class="swiper-container1">
                <div class="swiper-wrapper">
                   <li  class="swiper-slide"  v-for="item in lineList">
-                    <a class="tag_slide" :href="'/line/detail/' + item.id">
-                    <img  v-lazy="item.litpic"></a>
+                    <router-link class="tag_slide" :to="{path:'detail',query:{id:item.id}}">
+                    <img  v-lazy="item.litpic"></router-link>
                     <span class="swiper-icon" v-if="item.linetype == 0"><img src="../assets/images/dsjy.png" alt=""></span>
                     <span class="swiper-icon" v-if="item.linetype == 1"><img src="../assets/images/msjy.png" alt=""></span>
                     <span class="swiper-icon" v-if="item.linetype == 2"><img src="../assets/images/xxdj.png" alt=""></span>

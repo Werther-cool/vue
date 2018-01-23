@@ -1,6 +1,6 @@
 <template lang="html">
   <div id="detail" >
-      <!-- <div class="detail_swiper">
+      <div class="detail_swiper">
         <div class="swiper-container">
           <div class="swiper-wrapper">
             <li class="swiper-slide" v-for="val in base.piclist" >
@@ -10,8 +10,8 @@
             </li>
           </div>
         </div>
-      </div> -->
-        <!-- <div class="title">
+      </div>
+        <div class="title">
           <h3>{{base.title}}</h3>
           <s>¥{{base.originalprice}}/人</s> <span class="title_price"><em>¥{{base.storeprice}}</em>/人</span> <span class="title_fr">预计参与{{info.total_num}}人</span>
           <div class="title_leader">
@@ -26,7 +26,7 @@
               <p>集合地点：{{changeBase.meeting_point}}</p>
           </div>
         </div>
-        <div class="choseTime" v-if="isExpired==0 ">
+        <!-- <div class="choseTime" v-if="isExpired==0 ">
            <span class="icon_title"> <em><img src="../assets/images/chosetime_icon.png" alt=""></em> 选择出发时间</span>
            <a @click="{showServer=1}" class="detail_btn">定制路线</a>
            <div class="swiper-container2">
@@ -63,7 +63,7 @@
          </div>
         </div> -->
 
-        <!-- <div class="companion">
+        <div class="companion">
             <span class="icon_title"> <em><img src="../assets/images/companion.png" alt=""></em>
             <i>结伴</i>({{info.line_num}}人成团)</span>
             <a :href="'/line/mate?lineid='+id+'&linedate='+nowLineTime" class="companion_fr">余席数 <i style="color: #ffae00;">{{info.male_inventory}}</i>/{{info.total_num}} <em class="border_arrow"> </em> </a>      
@@ -78,7 +78,7 @@
                 </template>
                 </a>
             </div>
-        </div> -->
+        </div> 
 
         <!-- <div class="contain">
             <div class="con_nav">
@@ -224,71 +224,51 @@ export default {
               isExpired:0,   // 是否过期
               page:2
            }
-        },
-            created:function () {
+          },
+            created: function() {
+              this.id = this.$route.query.id;
+              
+              this.$http.get('/tp/Api/Line/detail',{params:{'id':this.id,'linedateId':this.nowLineId}})
+              .then((res) => {
+                this.base =res.data.data;
+                this.isLogin = res.data.isLogin;
+                this.linedate = this.base.linedate;
+
+                  this.goCheck(0);
+                }, (err) => {
+                console.log(err)
+                })
+
+               this.$http.get('/tp/api/Comment/getCommentList',{params:{'artid':this.id}})
+                .then((res) => {
+                  this.comment =res.data.data;
+                  }, (err) => {
+                  console.log(err)
+                  })
                 
-            },
+
+
+          },
             methods:{
                 init: function () {
                   
-                  function GetQueryString(name)
-                  {
-                      var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
-                      var r = window.location.search.substr(1).match(reg);
-                      if(r!=null)return  unescape(r[2]); return null;
-                  }
-                  if (GetQueryString("linedateId")) {
-                      vm.nowLineId =GetQueryString("linedateId");
+                  // function GetQueryString(name)
+                  // {
+                  //     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+                  //     var r = window.location.search.substr(1).match(reg);
+                  //     if(r!=null)return  unescape(r[2]); return null;
+                  // }
+                  // if (GetQueryString("linedateId")) {
+                  //     vm.nowLineId =GetQueryString("linedateId");
                       
-                      vm.isExpired =1;
-                  }
+                  //     vm.isExpired =1;
+                  // }
 
-                  /* 截取id */
-                    var str = window.location.href;    
-                    var index = str.lastIndexOf("\/");  
-                    var index2 = str.indexOf("?");
-                    if (index2>0) {
-                      str  = str.slice(index + 1, index2);
-                    }else{
-                      str  = str.substring(index + 1, str.length);
-                    }
-                    this.id = str;
-                    this.baseInit();
                     setTimeout(function () {
                     //   vm.wxInit();
                     },3000);
-                    this.commentInit();
-                    this.rewardInit();
-              
-                },
-                commentInit:function () {
-                  ajax({
-                    url:"/tp/api/Comment/getCommentList",
-                    data:{"artid":vm.id},
-                    success:function (res) {
-
-                      var res = eval("("+res+")");
-                      vm.comment = res.data;
-                    }
-                    
-                  }) 
-                },
-                baseInit:function () {
-                      ajax({
-                        url:"/tp/Api/Line/detail",
-                        data:{"id":vm.id,"linedateId":vm.nowLineId},
-                        success:function (res) {
-                          var res = eval("("+res+")");
-                          
-                          vm.base =res.data;
-                          vm.isLogin = res.data.isLogin;
-                          vm.linedate = vm.base.linedate;
-
-                          /* 先加载linedate */
-                          vm.goCheck(0);
-
-                        }
-                      })
+                    // this.commentInit();
+                    // this.rewardInit(); 
                 },
                 rewardInit:function () {
                     ajax({
@@ -313,11 +293,25 @@ export default {
                 },
                 goCheck:function (index) {
                   this.init_n =index;
-                  if (index!=0) {
-                    this.mySwiper.update();
-                  }
-                  this.nowLineTime = vm.linedate[index].linedate;
-                  this.nowLineId = vm.linedate[index].id;
+                  // if (index!=0) {
+                  //   this.mySwiper.update();
+                  // }
+                  this.nowLineTime = this.linedate[index].linedate;
+                  this.nowLineId = this.linedate[index].id;
+
+                  this.$http.get('/line/ajax_get_linedate',
+                  {params:{'lineid':this.id,linedate:this.linedate[index].linedate,linedateId:this.nowLineId}})
+                .then((res) => {
+                        var res =res.data;
+                        console.log(res);
+                        this.info = res.info;
+                        this.changeBase = res.base;
+                        this.partners = res.partners;
+                        this.isLike = res.base.isLike;
+                        this.isComment = res.base.isComment;
+                  }, (err) => {
+                  console.log(err)
+                  })
                 //   $.ajax({
                 //       url:'/line/ajax_get_linedate',
                 //       type:'post',
