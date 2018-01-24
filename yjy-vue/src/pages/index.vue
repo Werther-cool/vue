@@ -192,6 +192,16 @@ export default {
      FootNav
   },
   created:function () {
+            this.$http.get('/tp/Api/Member/isLogin',{params:{'appId':1}})
+            .then((res) => {
+              if (res.data.code==10105) {
+                this.login();
+              }
+            }, (err) => {
+            console.log(err)
+            })
+
+
         //  this.$http.get('/mock/banner.json')
         //       .then((res) => {
         //         console.log(res);
@@ -201,8 +211,7 @@ export default {
         //       })
         this.$http.get('/tp/Api/Ad/banners',{params:{'posId':14}})
             .then((res) => {
-
-         this.slides = res.body.data;
+            this.slides = res.body.data;
             }, (err) => {
             console.log(err)
             })
@@ -293,14 +302,20 @@ export default {
         },
         place(num){
             this.nowPlace = num;
-             this.$http.get('/tp/Api/line/getCityList',{params:{'id':num}})
-                    .then((res) => {
-
-
-                  //window.location.reload();
-                    }, (err) => {
-                    console.log(err)
-                    })
+            this.$http.get('/tp/Api/line/getCityList',{params:{'id':num}})
+            .then((res) => {
+            window.location.reload();
+            }, (err) => {
+            console.log(err)
+            })
+        },
+        login(){
+          this.$http.get('/tp/Api/line/getCityList',{params:{'backurl':'http://m.1a1trip.com'}})
+              .then((res) => {
+                
+              }, (err) => {
+              console.log(err)
+              })
         }
   },
   filters:{

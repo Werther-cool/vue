@@ -245,7 +245,12 @@ export default {
                   }, (err) => {
                   console.log(err)
                   })
-                
+                 this.$http.get('/tp/api/Comment/getRewardList',{params:{'lineId':this.id}})
+                .then((res) => {
+                  vm.appreList =res.data.data;
+                  }, (err) => {
+                  console.log(err)
+                  })
 
 
           },
@@ -267,25 +272,26 @@ export default {
                     setTimeout(function () {
                     //   vm.wxInit();
                     },3000);
-                    // this.commentInit();
-                    // this.rewardInit(); 
-                },
-                rewardInit:function () {
-                    ajax({
-                      url: "/tp/api/Comment/getRewardList/",
-                      data:{"lineId":vm.id},
-                      success:function (res) {
-                        var  res = eval("("+res+")");
-                        vm.appreList = res.data;
-
-                      }
-                    })
+                  
                 },
                 close:function (val) {
                   vm[val] = 0;
                 },
                 show:function (val) {
                   vm[val] = 1;
+                },
+                like:function () {
+                this.judgeLogin();
+                  this.isLike = !this.isLike;
+                  // this.$http.post({})
+                  // $.ajax({
+                  //   url:"/line/linedate_like",
+                  //   type:"post",
+                  //   data:"linedateId="+vm.nowLineId+"&lineId="+vm.id,
+                  //   success:function () {
+        
+                  //   }
+                  // });
                 },
                 getEdit:function () {
                   this.show('edit');
