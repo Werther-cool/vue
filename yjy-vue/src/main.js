@@ -8,6 +8,9 @@ import VueResource from 'vue-resource'
 import VueAwesomeSwiper from 'vue-awesome-swiper/dist/ssr'
 import 'swiper/dist/css/swiper.css'
 import VueLazyload from 'vue-lazyload'
+import WxConfig from './util/wxConfig'
+
+Vue.use(WxConfig);
 
 Vue.config.productionTip = false
 

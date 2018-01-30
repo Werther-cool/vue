@@ -8,9 +8,9 @@
       <div class="index_banner" v-cloak>
           <div v-swiper:mySwiper="swiperOption">
             <div class="swiper-wrapper">
-            <div class="swiper-slide" v-for="item in slides">
-                <a :href="item.bannerThumb"><img v-lazy="item.bannerImg"></a>
-            </div>
+              <div class="swiper-slide" v-for="item in slides">
+                  <a :href="item.bannerThumb"><img v-lazy="item.bannerImg"></a>
+              </div>
             </div>
              <div class="swiper-pagination"></div>
         </div>

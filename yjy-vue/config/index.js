@@ -24,7 +24,14 @@ module.exports = {
         pathRewrite: { 
             '^/uploads': '/uploads',
             } 
-        }  
+        },
+        '/ueditor': { 
+          target: 'http://m.1a1trip.com/', 
+          changeOrigin: true, 
+          pathRewrite: { 
+              '^/ueditor': '/ueditor',
+              } 
+          }    
     },
 
     // Various Dev Server settings

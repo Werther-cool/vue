@@ -15,7 +15,24 @@ let UTday = message => {
     return dformat;
 }
 
+/* 时间戳 => 月份 */
+let filters_m = message => {
+    var dformat = '';
+    if (message) {
+        var d = new Date(parseInt(message) * 1000);
+        dformat =(d.getMonth() + 1);
+    }
+    return dformat;
+}
 
+/* 时间戳 => 日 */
+let filters_d = message => {
+    var dformat = '';
+    if (message) {
+        var d = new Date(parseInt(message) * 1000);
+        dformat =d.getDate();
+    }
+    return dformat;
+}
 
-
-export { weekday ,UTday}
+export { weekday ,UTday,filters_m,filters_d}

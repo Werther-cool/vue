@@ -1,8 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import MainPage from '../pages/MainPage'
 import Index from '../pages/index'
-import Detail from '../pages/detail1'
+import Detail from '../pages/detail'
 
 Vue.use(Router)
 
