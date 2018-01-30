@@ -10,7 +10,7 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: { 
+    /* proxyTable: { 
       '/tp': { 
       target: 'http://m.1a1trip.com/', 
       changeOrigin: true, 
@@ -31,9 +31,33 @@ module.exports = {
           pathRewrite: { 
               '^/ueditor': '/ueditor',
               } 
-          }    
+          },
+             
+    }, */
+    proxyTable: { 
+      '/tp': { 
+      target: 'http://uatm.1a1trip.com/', 
+      changeOrigin: true, 
+      pathRewrite: { 
+          '^/tp': '/tp',
+          } 
+      },
+      '/uploads': { 
+        target: 'http://uatm.1a1trip.com/', 
+        changeOrigin: true, 
+        pathRewrite: { 
+            '^/uploads': '/uploads',
+            } 
+        },
+        '/ueditor': { 
+          target: 'http://uatm.1a1trip.com/', 
+          changeOrigin: true, 
+          pathRewrite: { 
+              '^/ueditor': '/ueditor',
+              } 
+          },
+             
     },
-
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
     port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined

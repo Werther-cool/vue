@@ -271,20 +271,125 @@ export default {
                   console.log(err)
                   })
 
+                  var self = this;
                   setTimeout(function () {
-                    this.wxconfig();
-                  },3000);
+                    /* self.wxconfig(); */
+                    self.init();
+                  },1000);
 
           },
             methods:{
                 init: function () {
-                  
-         
+                  var self = this;
+                  this.$http.get('http://uatm.1a1trip.com/tp/Api/utility/getWXConfig')
+                          .then((res) => {
+                          let data = res.body.data;
 
-                  setTimeout(function () {
-                    this.wxconfig();
-                  },3000);
+                          wx.config({
+                              debug: true,
+                              appId: data.appId,
+                              timestamp: data.timestamp,
+                              nonceStr: data.nonceStr,
+                              signature: data.signature,
+                              jsApiList: [
+                              'onMenuShareTimeline',
+                              'onMenuShareAppMessage',
+                              'chooseImage',
+                              'previewImage',
+                              'uploadImage',
+                              'chooseWXPay'
+                              ]
+                          });
+                        
+                          }, (err) => {
+                          console.log(err)
+                          });
+
+
+                  wx.ready(function () {
+                      var shareTitle = '壹加壹-'+self.base.title;
+                      var sharePic = location.protocol+'//'+window.location.host+self.base.piclist[0];
+                      var shareDesc = self.shareText?self.shareText:'世界很美，而你正好在这里！--壹加壹旅游';
+                      wx.onMenuShareAppMessage({
+                          title: shareTitle, // 分享标题
+                          desc: shareDesc, // 分享描述
+                          link: window.location.href, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+                          imgUrl: sharePic, // 分享图标
+                          type: '', // 分享类型,music、video或link，不填默认为link
+                          dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                          success: function () {
+                              // 用户确认分享后执行的回调函数
+                          },
+                          cancel: function () {
+                              // 用户取消分享后执行的回调函数
+                          }
+                      });
+                      wx.onMenuShareTimeline({
+                          title: shareTitle, // 分享标题
+                          link: window.location.href, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+                          imgUrl:sharePic, // 分享图标
+                          success: function () {
+                              // 用户确认分享后执行的回调函数
+                          },
+                          cancel: function () {
+                              // 用户取消分享后执行的回调函数
+                          }
+                      });
+                      /* 支付 */
+                        self.pay=function (timestamp,nonceStr,Package,signType,paySign) {
+                            wx.chooseWXPay({
+                            timestamp:timestamp,
+                            nonceStr:nonceStr,
+                            package:Package,
+                            signType:signType,
+                            paySign:paySign,
+                            success: function (res) {
+                                
+                            //加载赞赏列表
+                            this.$http.get('/tp/api/Comment/getRewardList',{params:{'lineId':this.id}})
+                            .then((res) => {
+                              this.appreList =res.data.data;
+                              }, (err) => {
+                              console.log(err)
+                              })
+             
+                       
+                              }
+                            });
+                        }
+                    });
+
+                  wx.error(function (res) {
+                      alert(res.errMsg);
+                  });
                   
+                },
+                /* 赞赏 调用支付接口 */
+                admir: function (price) {
+                  // this.judgeLogin();
+                  // ajax({
+                  //     url:"/order/leader_reward",
+                  //     type:"post",
+                  //     data:{"reward":price,"linedateId":vm.nowLineId,"leaderMid":vm.info.leaderId},
+                  //     success:function(res){
+                  //       var res = eval('('+res+')');
+                  //       vm.rewardOrdersn = res.ordersn;
+
+                  //       res=eval('('+res.parameter+')');
+                  //       vm.pay(res.timeStamp,res.nonceStr,res.package,res.signType,res.paySign);
+                  //     }
+                  //   });
+                  /* type:1 赞赏领队(固定值) */
+                  this.$http.post('/tp/Api/line/rewardLeader',{params:{'type':1,reward:price,'leaderMid':this.info.leaderId}})
+                .then((res) => {
+                       res = eval('('+res+')');
+                        this.rewardOrdersn = res.ordersn;
+                        res=eval('('+res.parameter+')');
+                         self.pay(res.timeStamp,res.nonceStr,res.package,res.signType,res.paySign);
+                  }, (err) => {
+                  console.log(err)
+                  })
+
                 },
                 close:function (val) {
                   this[val] = 0;

@@ -44,9 +44,7 @@
       <div class="pair_nav" v-cloak v-if="nowPlace==75">
         <div class="pair_nav_hd clearfix">
           <ul class="clearfix">
-            <li :class="{'nav_on': navNum==1}" @click="nav(1)"><a>本周活动</a></li>
-            <li :class="{'nav_on': navNum==2}" @click="nav(2)"><a>下周活动</a> </li>
-            <li :class="{'nav_on': navNum==3}" @click="nav(3)"><a>纪念月活动</a> </li>
+            <li v-for="item in tagnames" :class="{'nav_on': navNum==item.posId}" @click="nav(item.posId)"><a>{{item.posName}}</a></li>
           </ul>
         </div>
           <div class="tag_container" v-cloak>
@@ -170,6 +168,7 @@ export default {
           holiday:[],
           hotlist:[],
           historyLines:[], //历史回顾
+          tagnames:[],
           swiperOption:
                         {
                         autoplay: true,
@@ -215,16 +214,11 @@ export default {
             }, (err) => {
             console.log(err)
             })
-        this.$http.get('/tp/Api/line/getWeekLines',{params:{'appid':'1','type':'2'}})
-        .then((res) => {
-         this.lineList = res.body.data;
-        }, (err) => {
-        console.log(err)
-        })
+        
 
          this.$http.get('/tp/Api/line/getCityList')
          .then((res) => {
-       console.log(res);
+    
           var res = res.body.data;
             for(let i =0;i<res.length;i++){
               if (res[i].status==1){
@@ -266,7 +260,7 @@ export default {
         // }, (err) => {
         // console.log(err)
         // })
-        this.nav(1);
+        this.nav(17);
   },
   methods:{
         nav(navNum) {
@@ -291,11 +285,11 @@ export default {
 
         },
         getWeekLine(num){
-            this.$http.get('/tp/Api/line/getWeekLines',{params:{'appid':'1','type':num}})
+            this.$http.get('/tp/Api/line/getWeekLines',{params:{'appid':'1','posId':num}})
           .then((res) => {
-          this.lineCache[num] = res.body.data;
-           console.log(this.lineCache);
-           this.lineList = this.lineCache[num];
+            console.log(res.body.data);
+            this.tagnames = res.body.data.tagname;
+          this.lineList = res.body.data.list;
           }, (err) => {
           console.log(err)
           })
