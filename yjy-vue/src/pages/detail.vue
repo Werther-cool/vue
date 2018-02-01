@@ -273,7 +273,7 @@ export default {
 
                   var self = this;
                   setTimeout(function () {
-                    /* self.wxconfig(); */
+                    self.wxconfig();
                     self.init();
                   },1000);
 
@@ -281,31 +281,6 @@ export default {
             methods:{
                 init: function () {
                   var self = this;
-                  this.$http.get('http://uatm.1a1trip.com/tp/Api/utility/getWXConfig')
-                          .then((res) => {
-                          let data = res.body.data;
-
-                          wx.config({
-                              debug: true,
-                              appId: data.appId,
-                              timestamp: data.timestamp,
-                              nonceStr: data.nonceStr,
-                              signature: data.signature,
-                              jsApiList: [
-                              'onMenuShareTimeline',
-                              'onMenuShareAppMessage',
-                              'chooseImage',
-                              'previewImage',
-                              'uploadImage',
-                              'chooseWXPay'
-                              ]
-                          });
-                        
-                          }, (err) => {
-                          console.log(err)
-                          });
-
-
                   wx.ready(function () {
                       var shareTitle = '壹加壹-'+self.base.title;
                       var sharePic = location.protocol+'//'+window.location.host+self.base.piclist[0];
