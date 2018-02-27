@@ -155,6 +155,7 @@
 import Banner from '../components/Banner'
 import FootNav from '../components/FootNav'
 import * as datefilter from '../util/datefilter'
+import constValue from '../util/constValue'
 export default {
   name:'Index',
   data(){
@@ -193,6 +194,7 @@ export default {
   created:function () {
             this.$http.get('/tp/Api/Member/isLogin',{params:{'appId':1}})
             .then((res) => {
+              console.log(constValue.domain);
               if (res.data.code==10105) {
                 this.login();
               }
@@ -304,12 +306,8 @@ export default {
             })
         },
         login(){
-          this.$http.get('/tp/Api/line/getCityList',{params:{'backurl':'http://m.1a1trip.com'}})
-              .then((res) => {
-                
-              }, (err) => {
-              console.log(err)
-              })
+    
+         window.location.href='"/tp/Api/Utility/wechatClientLogin?backurl="+constValue.domain'
         }
   },
   filters:{
